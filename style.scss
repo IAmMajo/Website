@@ -28,7 +28,7 @@ body {
 img {
   height: 92px;
   width: 92px;
-  margin: 8px 8px 23px 8px;
+  margin: 7px 8px 23px 8px;
   object-fit: contain;
 }
 
@@ -75,22 +75,18 @@ img {
 
 @media (hover: hover) {
   .mdc-card {
-    @include card.outline(#e0e0e0, 1px);
-    @include elevation.elevation(0);
-    padding: 15px;
+    box-shadow: 0 0 0 1px #e0e0e0;
   }
 
   .mdc-card:hover {
-    @include card.outline(#e0e0e0, 0px);
     @include elevation.elevation(4);
-    padding: 16px;
   }
 }
 
 @media (hover: hover) and (prefers-color-scheme: dark) {
   .mdc-card {
     --mdc-theme-surface: #121212;
-    @include card.outline(#2f2f2f, 1px);
+    box-shadow: 0 0 0 1px #2f2f2f;
   }
 
   .mdc-card:hover {
