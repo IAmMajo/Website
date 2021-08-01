@@ -18,6 +18,7 @@
     "npm": "7.20.1"
   },
   "dependencies": {
+    "@fontsource/roboto": "^4.5.0",
     "@material/card": "^11.0.0",
     "@material/elevation": "^11.0.0",
     "@material/ripple": "^11.0.0",
