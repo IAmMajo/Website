@@ -76,7 +76,7 @@ img {
 
 @media (hover: hover) {
   .mdc-card {
-    box-shadow: 0 0 0 1px #e0e0e0;
+    box-shadow: elevation.elevation-box-shadow(0), 0 0 0 1px #e0e0e0;
   }
 
   .mdc-card:hover {
@@ -87,7 +87,7 @@ img {
 @media (hover: hover) and (prefers-color-scheme: dark) {
   .mdc-card {
     --mdc-theme-surface: #121212;
-    box-shadow: 0 0 0 1px #2f2f2f;
+    box-shadow: elevation.elevation-box-shadow(0), 0 0 0 1px #2f2f2f;
   }
 
   .mdc-card:hover {
