@@ -21,7 +21,8 @@ body {
   margin: 4px;
 }
 
-.mdc-card__primary-action:first-child {
+.mdc-card__primary-action:first-child,
+.mdc-card__primary-action:last-child {
   border-radius: 4px;
 }
 
