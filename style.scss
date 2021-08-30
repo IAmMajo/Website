@@ -33,6 +33,10 @@ h3 {
   margin: 44px 0;
 }
 
+h6, p {
+  margin: 0;
+}
+
 .mdc-card {
   padding: 16px;
   margin: 4px;
@@ -50,13 +54,13 @@ img {
   object-fit: contain;
 }
 
-.mdc-typography--headline6,
+h6,
 h2,
 h3 {
   opacity: 0.87;
 }
 
-.mdc-typography--body2 {
+p {
   opacity: 0.6;
 }
 
