@@ -18,7 +18,8 @@ body {
   justify-content: center;
 }
 
-h2, h3 {
+h2,
+h3 {
   text-align: center;
 }
 
@@ -47,7 +48,9 @@ img {
   object-fit: contain;
 }
 
-.mdc-typography--headline6, h2, h3 {
+.mdc-typography--headline6,
+h2,
+h3 {
   opacity: 0.87;
 }
 
