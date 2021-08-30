@@ -10,10 +10,25 @@ html {
 }
 
 body {
-  margin: 12px;
+  margin: 49.8px 12px 12px;
+}
+
+.category {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+h2 {
+  margin: 45.8px 0;
+}
+
+h3 {
+  margin: 44px 0;
 }
 
 .mdc-card {
@@ -33,7 +48,7 @@ img {
   object-fit: contain;
 }
 
-.mdc-typography--headline6 {
+.mdc-typography--headline6, h2, h3 {
   opacity: 0.87;
 }
 
