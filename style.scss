@@ -20,21 +20,21 @@ body {
   justify-content: center;
 }
 
-h2,
-h3 {
+.mdc-typography--headline2,
+.mdc-typography--headline3 {
   text-align: center;
 }
 
-h2 {
+.mdc-typography--headline2 {
   margin: 45.8px 0;
 }
 
-h3 {
+.mdc-typography--headline3 {
   margin: 44px 0;
 }
 
-h6,
-p {
+.mdc-typography--headline6,
+.mdc-typography--body2 {
   margin: 0;
 }
 
@@ -55,13 +55,13 @@ img {
   object-fit: contain;
 }
 
-h6,
-h2,
-h3 {
+.mdc-typography--headline6,
+.mdc-typography--headline2,
+.mdc-typography--headline3 {
   opacity: 0.87;
 }
 
-p {
+.mdc-typography--body2 {
   opacity: 0.6;
 }
 
