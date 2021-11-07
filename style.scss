@@ -1,17 +1,25 @@
-@use "@material/card/mdc-card";
-@use "@material/elevation/index" as elevation;
+@use "@material/card/index" as card;
 @use "@material/typography/mdc-typography";
+@use "variables" as *;
 
-@include elevation.core-styles;
+@include card.core-styles;
 
 html {
   font-size: 16px;
-  max-width: 875px;
-  margin: auto;
+  --mdc-theme-surface: #{$md-sys-color-surface};
+  --mdc-shape-medium: 12px;
+  --mdc-ripple-color: #{$md-sys-color-on-surface};
+  --mdc-ripple-hover-opacity: 0.08;
+  --mdc-typography-subtitle1-font-weight: 500;
+  --mdc-typography-subtitle1-line-height: 24px;
 }
 
 body {
-  margin: 49.8px 12px 12px;
+  max-width: 887px;
+  margin: auto;
+  padding: 4px 12px 12px;
+  background-color: var(--mdc-theme-surface);
+  color: var(--mdc-ripple-color);
 }
 
 .category {
@@ -33,36 +41,40 @@ body {
   margin: 44px 0;
 }
 
-.mdc-typography--headline6,
+.mdc-typography--subtitle1,
 .mdc-typography--body2 {
   margin: 0;
 }
 
 .mdc-card {
+  @include card.outline($md-sys-color-outline);
   padding: 16px;
   margin: 4px;
+  width: 100%;
 }
 
 .mdc-card__primary-action:first-child,
 .mdc-card__primary-action:last-child {
-  border-radius: 4px;
+  border-radius: 12px;
+}
+
+.img-wrapper {
+  position: relative;
+  margin: calc((50% - 32px) / 3) auto calc((50% + 16px) / 3);
+  padding-top: calc((200% + 64px) / 3);
+  width: calc((200% + 64px) / 3);
 }
 
 img {
-  height: 92px;
-  width: 92px;
-  margin: 7px 8px 23px 8px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
   object-fit: contain;
 }
 
-.mdc-typography--headline6,
-.mdc-typography--headline2,
-.mdc-typography--headline3 {
-  opacity: 0.87;
-}
-
 .mdc-typography--body2 {
-  opacity: 0.6;
+  color: $md-sys-color-on-surface-variant;
 }
 
 .dark {
@@ -75,10 +87,16 @@ img {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #121212;
-    --mdc-theme-surface: #1e1e1e;
-    --mdc-ripple-color: white;
-    color: white;
+    --mdc-theme-surface: #{$md-sys-color-surface-dark};
+    --mdc-ripple-color: #{$md-sys-color-on-surface-dark};
+  }
+
+  .mdc-card {
+    @include card.outline($md-sys-color-outline-dark);
+  }
+
+  .mdc-typography--body2 {
+    color: $md-sys-color-on-surface-variant-dark;
   }
 
   .light {
@@ -98,23 +116,26 @@ img {
   }
 }
 
-@media (hover: hover) {
+@media (min-width: 320px) {
   .mdc-card {
-    box-shadow: elevation.elevation-box-shadow(0), 0 0 0 1px #e0e0e0;
-  }
-
-  .mdc-card:hover {
-    @include elevation.elevation(4);
+    width: calc(100% / 2 - 8px);
   }
 }
 
-@media (hover: hover) and (prefers-color-scheme: dark) {
+@media (min-width: 468px) {
   .mdc-card {
-    --mdc-theme-surface: #121212;
-    box-shadow: elevation.elevation-box-shadow(0), 0 0 0 1px #2e2e2e;
+    width: calc(100% / 3 - 8px);
   }
+}
 
-  .mdc-card:hover {
-    --mdc-theme-surface: #272727;
+@media (min-width: 616px) {
+  .mdc-card {
+    width: calc(100% / 4 - 8px);
+  }
+}
+
+@media (min-width: 764px) {
+  .mdc-card {
+    width: calc(100% / 5 - 8px);
   }
 }
