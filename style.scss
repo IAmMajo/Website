@@ -82,7 +82,7 @@ img {
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
+  html {
     --mdc-theme-surface: #{$md-sys-color-surface-dark};
     --mdc-ripple-color: #{$md-sys-color-on-surface-dark};
   }
