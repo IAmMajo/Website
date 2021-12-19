@@ -1,4 +1,4 @@
 import { defineConfig } from "vite";
-import viteImagemin from "vite-plugin-imagemin";
+import compress from "vite-plugin-compress";
 
-export default defineConfig({ plugins: [viteImagemin()] });
+export default defineConfig({ plugins: [compress({ brotli: false })] });
