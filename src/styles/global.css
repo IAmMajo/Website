@@ -1,0 +1,55 @@
+@import url("./theme/light.css");
+@import url("./theme/dark.css");
+@import url("./theme/light-hc.css");
+@import url("./theme/dark-hc.css");
+
+@font-face {
+  font-family: "Roboto Flex";
+  src: url("../fonts/roboto-flex.woff2");
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto Flex", sans-serif;
+  line-height: var(--mdui-typescale-body-medium-line-height);
+  font-weight: var(--mdui-typescale-body-medium-weight);
+  font-size: var(--mdui-typescale-body-medium-size);
+  letter-spacing: var(--mdui-typescale-body-medium-tracking);
+}
+.headline {
+  line-height: var(--mdui-typescale-headline-medium-line-height);
+  font-weight: var(--mdui-typescale-headline-medium-weight);
+  font-size: var(--mdui-typescale-headline-medium-size);
+  letter-spacing: var(--mdui-typescale-headline-medium-tracking);
+}
+.title-large {
+  line-height: var(--mdui-typescale-title-large-line-height);
+  font-weight: var(--mdui-typescale-title-large-weight);
+  font-size: var(--mdui-typescale-title-large-size);
+  letter-spacing: var(--mdui-typescale-title-large-tracking);
+}
+.title {
+  line-height: var(--mdui-typescale-title-medium-line-height);
+  font-weight: var(--mdui-typescale-title-medium-weight);
+  font-size: var(--mdui-typescale-title-medium-size);
+  letter-spacing: var(--mdui-typescale-title-medium-tracking);
+}
+.dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    font-variation-settings: "GRAD" -25;
+  }
+  .light {
+    display: none;
+  }
+  .dark {
+    display: unset;
+  }
+  .invert {
+    filter: invert(1);
+  }
+}

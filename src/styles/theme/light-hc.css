@@ -1,0 +1,41 @@
+@media (prefers-contrast: more) {
+  :root {
+    --mdui-color-primary-light: 0, 38, 49;
+    --mdui-color-surface-tint-light: 10, 103, 128;
+    --mdui-color-on-primary-light: 255, 255, 255;
+    --mdui-color-primary-container-light: 0, 73, 92;
+    --mdui-color-on-primary-container-light: 255, 255, 255;
+    --mdui-color-secondary-light: 66, 18, 1;
+    --mdui-color-on-secondary-light: 255, 255, 255;
+    --mdui-color-secondary-container-light: 109, 50, 28;
+    --mdui-color-on-secondary-container-light: 255, 255, 255;
+    --mdui-color-tertiary-light: 30, 31, 62;
+    --mdui-color-on-tertiary-light: 255, 255, 255;
+    --mdui-color-tertiary-container-light: 63, 64, 96;
+    --mdui-color-on-tertiary-container-light: 255, 255, 255;
+    --mdui-color-error-light: 78, 0, 2;
+    --mdui-color-on-error-light: 255, 255, 255;
+    --mdui-color-error-container-light: 140, 0, 9;
+    --mdui-color-on-error-container-light: 255, 255, 255;
+    --mdui-color-background-light: 245, 250, 253;
+    --mdui-color-on-background-light: 23, 28, 31;
+    --mdui-color-surface-light: 245, 250, 253;
+    --mdui-color-on-surface-light: 0, 0, 0;
+    --mdui-color-surface-variant-light: 220, 228, 232;
+    --mdui-color-on-surface-variant-light: 29, 37, 41;
+    --mdui-color-outline-light: 60, 68, 72;
+    --mdui-color-outline-variant-light: 60, 68, 72;
+    --mdui-color-shadow-light: 0, 0, 0;
+    --mdui-color-scrim-light: 0, 0, 0;
+    --mdui-color-inverse-surface-light: 44, 49, 52;
+    --mdui-color-inverse-on-surface-light: 255, 255, 255;
+    --mdui-color-inverse-primary-light: 210, 241, 255;
+    --mdui-color-surface-dim-light: 214, 219, 222;
+    --mdui-color-surface-bright-light: 245, 250, 253;
+    --mdui-color-surface-container-lowest-light: 255, 255, 255;
+    --mdui-color-surface-container-low-light: 240, 244, 247;
+    --mdui-color-surface-container-light: 234, 238, 242;
+    --mdui-color-surface-container-high-light: 228, 233, 236;
+    --mdui-color-surface-container-highest-light: 222, 227, 230;
+  }
+}
