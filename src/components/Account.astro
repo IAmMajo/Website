@@ -25,10 +25,8 @@ const Heading = inSubcategory ? "h4" : "h3";
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../images/logos/**/*"
 );
-const imageName = logoTitle
-  .toLowerCase()
-  .replaceAll(".", "")
-  .replaceAll(" ", "-");
+const logoTitleNoSpaces = logoTitle.replaceAll(" ", "-");
+const imageName = logoTitleNoSpaces.toLowerCase().replaceAll(".", "");
 const imagePath = `../images/logos/${imageName}`;
 const darkImagePath = `../images/logos/dark/${imageName}`;
 let image = images[`${imagePath}.svg`];
@@ -48,6 +46,7 @@ if (!image) {
     }
   }
 }
+const alt = `${logoTitleNoSpaces}-Logo`;
 ---
 
 {
@@ -59,7 +58,7 @@ if (!image) {
           <Image
             class:list={[{ invert: invert, light: darkImage }]}
             src={image()}
-            alt={`${logoTitle} logo`}
+            alt={alt}
             width={92}
             height={92}
             densities={densities}
@@ -69,7 +68,7 @@ if (!image) {
             <Image
               class="dark"
               src={darkImage()}
-              alt={`${logoTitle} logo`}
+              alt={alt}
               width={92}
               height={92}
               densities={densities}
