@@ -1,0 +1,227 @@
+---
+import { Image } from "astro:assets";
+import { Button } from "mdui/components/button";
+import { Card } from "mdui/components/card";
+import Icon from "../components/Icon.astro";
+import applicationPhoto from "../images/application-photo.jpg";
+import githubLogo from "../images/logos/github.svg?raw";
+import Layout from "../layouts/Layout.astro";
+import TimelineItem from "../components/TimelineItem.astro";
+---
+
+<Layout title="Mein Lebenslauf">
+  <main class="gap-16">
+    <div class="introduction gap-16">
+      {
+        (
+          // @ts-expect-error
+          <Card class="fact-sheet gap-16">
+            <div class="application-photo">
+              <Image
+                src={applicationPhoto}
+                width={206}
+                densities={[1, 2, 3, 4]}
+                format="avif"
+                quality="high"
+                loading="eager"
+                alt="Bewerbungsfoto"
+              />
+            </div>
+            <div class="facts gap-8">
+              <h1 class="display-small">Max Overlack</h1>
+              <div>
+                <div class="fact">
+                  <Icon name="home" /> Moers
+                </div>
+                <div class="fact">
+                  <Icon name="cake" /> 27.02.2001
+                </div>
+                <div class="fact">
+                  <Icon name="location_on" /> Berlin
+                </div>
+                <div class="fact">
+                  <Icon name="person" /> ledig
+                </div>
+              </div>
+            </div>
+          </Card>
+        )
+      }
+      {
+        (
+          // @ts-expect-error
+          <Card class="profile gap-16">
+            <div class="gap-8">
+              <h2 class="headline">Profil</h2>
+              <div class="gap-16">
+                <p>
+                  Duis autem vel eum iriure dolor in hendrerit in vulputate
+                  velit esse molestie consequat, vel illum dolore eu feugiat
+                  nulla facilisis at vero eros et accumsan et iusto odio
+                  dignissim qui blandit praesent luptatum zzril delenit augue
+                  duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit
+                  amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                  euismod tincidunt ut laoreet dolore magna aliquam erat
+                  volutpat.
+                </p>
+                <p>
+                  Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                  ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+                  consequat. Duis autem vel eum iriure dolor in hendrerit in
+                  vulputate velit esse molestie consequat, vel illum dolore eu
+                  feugiat nulla facilisis at vero eros et accumsan et iusto odio
+                  dignissim qui blandit praesent luptatum zzril delenit augue
+                  duis dolore te feugait nulla facilisi.
+                </p>
+              </div>
+            </div>
+            <div class="buttons gap-8">
+              {
+                // @ts-expect-error
+                <Button
+                  client:load
+                  variant="text"
+                  class="github"
+                  href="https://github.com/IAmMajo"
+                  target="_blank"
+                >
+                  <Fragment slot="icon" set:html={githubLogo} />
+                  github.com/IAmMajo
+                </Button>
+              }
+            </div>
+          </Card>
+        )
+      }
+    </div>
+    <h2 class="headline">Berufserfahrung</h2>
+    <TimelineItem>
+      <h3 class="title">Backend-Entwickler</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+        ipsum dolor sit amet.
+      </p>
+    </TimelineItem>
+    <h2 class="headline">Bildung</h2>
+    <TimelineItem>
+      <h3 class="title">Medieninformatik-Studium</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+        ipsum dolor sit amet.
+      </p>
+    </TimelineItem>
+    <TimelineItem>
+      <h3 class="title">Fachinformatiker Anwendungsentwicklung</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+        ipsum dolor sit amet.
+      </p>
+    </TimelineItem>
+  </main>
+</Layout>
+<style>
+  h1,
+  h2,
+  p {
+    margin: 0;
+  }
+  .gap-8 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .gap-16 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  main {
+    padding: 16px;
+    max-width: 792px;
+    margin: auto;
+  }
+  mdui-card {
+    padding: 16px;
+  }
+  .fact-sheet {
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  .application-photo {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+  .facts {
+    flex: 1;
+    min-width: 206px;
+  }
+  img {
+    border-radius: var(--mdui-shape-corner-medium);
+  }
+  .fact {
+    margin: 2.5px 0;
+    display: flex;
+    gap: 1ch;
+    align-items: center;
+  }
+  .github :global(svg) {
+    width: 24px;
+    height: 24px;
+  }
+  .github :global(path) {
+    fill: currentColor;
+  }
+  .buttons {
+    justify-content: center;
+    flex-flow: row wrap;
+  }
+  mdui-button {
+    width: 222px;
+  }
+  @media (min-width: 538px) {
+    .introduction {
+      flex-direction: row;
+    }
+    .fact-sheet {
+      flex-flow: column;
+    }
+    .application-photo {
+      flex: unset;
+    }
+    .profile {
+      flex: 1;
+      justify-content: space-between;
+    }
+  }
+  @media (min-width: 600px) {
+    main {
+      padding: 24px;
+    }
+    main,
+    .introduction {
+      gap: 24px;
+    }
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+interface Props {
+  name: string;
+  slot?: string;
+}
+
+const { name, slot } = Astro.props;
+
+const lightIcon = (await import(`../icons/light/${name}.svg?raw`)).default;
+const darkIcon = (await import(`../icons/dark/${name}.svg?raw`)).default;
+---
+
+<div {slot} class="light" set:html={lightIcon} />
+<div {slot} class="dark" set:html={darkIcon} />
+
+<style>
+  div {
+    height: 24px;
+  }
+  div :global(svg) {
+    fill: currentColor;
+  }
+</style>

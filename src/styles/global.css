@@ -17,6 +17,12 @@ body {
   font-size: var(--mdui-typescale-body-medium-size);
   letter-spacing: var(--mdui-typescale-body-medium-tracking);
 }
+.display-small {
+  line-height: var(--mdui-typescale-display-small-line-height);
+  font-weight: var(--mdui-typescale-display-small-weight);
+  font-size: var(--mdui-typescale-display-small-size);
+  letter-spacing: var(--mdui-typescale-display-small-tracking);
+}
 .headline {
   line-height: var(--mdui-typescale-headline-medium-line-height);
   font-weight: var(--mdui-typescale-headline-medium-weight);

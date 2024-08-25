@@ -58,21 +58,21 @@ const alt = `${logoTitleNoSpaces}-Logo`;
           <Image
             class:list={[{ invert: invert, light: darkImage }]}
             src={image()}
-            alt={alt}
             width={92}
             height={92}
             densities={densities}
             format="avif"
+            alt={alt}
           />
           {darkImage && (
             <Image
               class="dark"
               src={darkImage()}
-              alt={alt}
               width={92}
               height={92}
               densities={densities}
               format="avif"
+              alt={alt}
             />
           )}
         </div>
