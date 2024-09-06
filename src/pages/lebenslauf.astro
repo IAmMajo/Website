@@ -11,7 +11,7 @@ import TimelineItem from "../components/TimelineItem.astro";
 
 <Layout title="Mein Lebenslauf">
   <main class="gap-16">
-    <div class="introduction gap-16">
+    <div class="introduction gap-8">
       {
         (
           // @ts-expect-error
@@ -29,15 +29,15 @@ import TimelineItem from "../components/TimelineItem.astro";
             </div>
             <div class="facts gap-8">
               <h1 class="display-small">Max Overlack</h1>
-              <div>
+              <div class="gap-5">
                 <div class="fact">
                   <Icon name="home" /> Moers
                 </div>
                 <div class="fact">
-                  <Icon name="cake" /> 27.02.2001
+                  <Icon name="event" /> 27.02.2001
                 </div>
                 <div class="fact">
-                  <Icon name="location_on" /> Berlin
+                  <Icon name="cake" /> Berlin
                 </div>
                 <div class="fact">
                   <Icon name="person" /> ledig
@@ -65,13 +65,18 @@ import TimelineItem from "../components/TimelineItem.astro";
                   volutpat.
                 </p>
                 <p>
-                  Ut wisi enim ad minim veniam, quis nostrud exerci tation
-                  ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-                  consequat. Duis autem vel eum iriure dolor in hendrerit in
-                  vulputate velit esse molestie consequat, vel illum dolore eu
-                  feugiat nulla facilisis at vero eros et accumsan et iusto odio
-                  dignissim qui blandit praesent luptatum zzril delenit augue
-                  duis dolore te feugait nulla facilisi.
+                  Nam liber tempor cum soluta nobis eleifend option congue nihil
+                  imperdiet doming id quod mazim placerat facer possim assum.
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                  aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                  nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                  aliquip ex ea commodo consequat.
+                </p>
+                <p>
+                  Duis autem vel eum iriure dolor in hendrerit in vulputate
+                  velit esse molestie consequat, vel illum dolore eu feugiat
+                  nulla facilisis.
                 </p>
               </div>
             </div>
@@ -94,50 +99,54 @@ import TimelineItem from "../components/TimelineItem.astro";
         )
       }
     </div>
-    <h2 class="headline">Berufserfahrung</h2>
-    <TimelineItem>
-      <h3 class="title">Backend-Entwickler</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-        ipsum dolor sit amet.
-      </p>
-    </TimelineItem>
-    <h2 class="headline">Bildung</h2>
-    <TimelineItem>
-      <h3 class="title">Medieninformatik-Studium</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-        ipsum dolor sit amet.
-      </p>
-    </TimelineItem>
-    <TimelineItem>
-      <h3 class="title">Fachinformatiker Anwendungsentwicklung</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-        ipsum dolor sit amet.
-      </p>
-    </TimelineItem>
+    <div class="gap-8">
+      <h2 class="headline">Berufserfahrung</h2>
+      <TimelineItem>
+        <h3 class="title">Backend-Entwickler</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+      </TimelineItem>
+    </div>
+    <div class="gap-8">
+      <h2 class="headline">Bildung</h2>
+      <TimelineItem>
+        <h3 class="title">Medieninformatik B.Sc.</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+      </TimelineItem>
+      <TimelineItem>
+        <h3 class="title">Fachinformatiker Anwendungsentwicklung</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+      </TimelineItem>
+    </div>
   </main>
 </Layout>
 <style>
@@ -145,6 +154,11 @@ import TimelineItem from "../components/TimelineItem.astro";
   h2,
   p {
     margin: 0;
+  }
+  .gap-5 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
   .gap-8 {
     display: flex;
@@ -181,7 +195,6 @@ import TimelineItem from "../components/TimelineItem.astro";
     border-radius: var(--mdui-shape-corner-medium);
   }
   .fact {
-    margin: 2.5px 0;
     display: flex;
     gap: 1ch;
     align-items: center;
@@ -198,9 +211,9 @@ import TimelineItem from "../components/TimelineItem.astro";
     flex-flow: row wrap;
   }
   mdui-button {
-    width: 222px;
+    width: 223px;
   }
-  @media (min-width: 538px) {
+  @media (min-width: 533px) {
     .introduction {
       flex-direction: row;
     }
@@ -218,10 +231,6 @@ import TimelineItem from "../components/TimelineItem.astro";
   @media (min-width: 600px) {
     main {
       padding: 24px;
-    }
-    main,
-    .introduction {
-      gap: 24px;
     }
   }
 </style>
