@@ -41,6 +41,12 @@ body {
   font-size: var(--mdui-typescale-title-medium-size);
   letter-spacing: var(--mdui-typescale-title-medium-tracking);
 }
+.title-small {
+  line-height: var(--mdui-typescale-title-small-line-height);
+  font-weight: var(--mdui-typescale-title-small-weight);
+  font-size: var(--mdui-typescale-title-small-size);
+  letter-spacing: var(--mdui-typescale-title-small-tracking);
+}
 .dark {
   display: none;
 }

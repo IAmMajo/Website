@@ -1,12 +1,106 @@
 ---
 import { Card } from "mdui/components/card";
+
+interface Props {
+  title: string;
+  entity?: string;
+  startDate: string;
+  endDate?: string;
+}
+
+const { title, entity, startDate, endDate } = Astro.props;
 ---
 
-<Card>
-  <slot />
-</Card>
+<li>
+  <article>
+    {
+      (
+        // @ts-expect-error
+        <Card class="gap-8">
+          <header>
+            <div>
+              <h1 class="title">{title}</h1>
+              {entity && <div class="supporting">{entity}</div>}
+            </div>
+            <div class="dates supporting">
+              {!endDate && "seit"}
+              <time datetime={startDate}>
+                {new Date(startDate).toLocaleString("de-DE", {
+                  month: "short",
+                  year: "numeric",
+                })}
+              </time>
+              {endDate && (
+                <span>
+                  -
+                  <time datetime={endDate}>
+                    {new Date(endDate).toLocaleString("de-DE", {
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </time>
+                </span>
+              )}
+            </div>
+          </header>
+          <slot />
+        </Card>
+      )
+    }
+  </article>
+</li>
 <style>
+  h1 {
+    margin: 0;
+  }
+  .gap-8 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+  }
+  li::before {
+    content: "•";
+    position: absolute;
+    margin-top: 0.25rem;
+    font-size: 56px;
+    left: 0;
+    width: 32px;
+    text-align: center;
+    color: rgb(var(--mdui-color-secondary));
+    z-index: 1;
+  }
+  li::after {
+    content: "";
+    position: absolute;
+    border-top: 32px solid transparent;
+    border-bottom: 32px solid transparent;
+    border-right: 16px solid rgb(var(--mdui-color-surface-container-low));
+    left: 16px;
+    filter: drop-shadow(0 0.5px 0.75px rgba(var(--mdui-color-shadow), 19%))
+      drop-shadow(0 0 0.5px rgba(var(--mdui-color-shadow), 3.9%));
+    clip-path: inset(-10px 0 -10px -10px);
+  }
+  article {
+    flex: 1;
+  }
   mdui-card {
     padding: 16px;
+  }
+  header {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    column-gap: 16px;
+    justify-content: space-between;
+  }
+  .dates {
+    text-align: right;
+  }
+  .supporting {
+    color: rgb(var(--mdui-color-on-surface-variant));
   }
 </style>
