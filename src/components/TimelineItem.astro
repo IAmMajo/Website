@@ -9,6 +9,11 @@ interface Props {
 }
 
 const { title, entity, startDate, endDate } = Astro.props;
+
+const format = new Intl.DateTimeFormat("de-DE", {
+  month: "short",
+  year: "numeric",
+});
 ---
 
 <li>
@@ -25,19 +30,13 @@ const { title, entity, startDate, endDate } = Astro.props;
             <div class="dates supporting">
               {!endDate && "seit"}
               <time datetime={startDate}>
-                {new Date(startDate).toLocaleString("de-DE", {
-                  month: "short",
-                  year: "numeric",
-                })}
+                {format.format(new Date(startDate))}
               </time>
               {endDate && (
                 <span>
                   -
                   <time datetime={endDate}>
-                    {new Date(endDate).toLocaleString("de-DE", {
-                      month: "short",
-                      year: "numeric",
-                    })}
+                    {format.format(new Date(endDate))}
                   </time>
                 </span>
               )}
@@ -48,6 +47,7 @@ const { title, entity, startDate, endDate } = Astro.props;
       )
     }
   </article>
+  <div class="arrow"></div>
 </li>
 <style>
   h1 {
@@ -59,7 +59,6 @@ const { title, entity, startDate, endDate } = Astro.props;
     gap: 8px;
   }
   li {
-    list-style-type: none;
     display: flex;
     align-items: center;
   }
@@ -77,13 +76,19 @@ const { title, entity, startDate, endDate } = Astro.props;
   li::after {
     content: "";
     position: absolute;
-    border-top: 32px solid transparent;
-    border-bottom: 32px solid transparent;
-    border-right: 16px solid rgb(var(--mdui-color-surface-container-low));
+    width: 10px;
+    height: 68px;
+    background-color: rgb(var(--mdui-color-surface-container-low));
+    left: 32px;
+  }
+  .arrow {
+    position: absolute;
+    border-top: 34px solid transparent;
+    border-bottom: 34px solid transparent;
+    border-right: 17px solid rgb(var(--mdui-color-surface-container-low));
     left: 16px;
-    filter: drop-shadow(0 0.5px 0.75px rgba(var(--mdui-color-shadow), 19%))
-      drop-shadow(0 0 0.5px rgba(var(--mdui-color-shadow), 3.9%));
-    clip-path: inset(-10px 0 -10px -10px);
+    filter: drop-shadow(0 0.5px 0.1875px rgba(var(--mdui-color-shadow), 19%))
+      drop-shadow(0 0 0.125px rgba(var(--mdui-color-shadow), 3.9%));
   }
   article {
     flex: 1;

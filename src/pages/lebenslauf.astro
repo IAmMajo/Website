@@ -125,7 +125,7 @@ import TimelineItem from "../components/TimelineItem.astro";
     </div>
     <div class="gap-8">
       <h2 class="headline">Berufserfahrung</h2>
-      <ul>
+      <ul class="timeline-list">
         <div class="timeline">
           {
             (
@@ -139,23 +139,27 @@ import TimelineItem from "../components/TimelineItem.astro";
           entity="Krankikom GmbH"
           startDate="2022-07"
         >
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-            no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+          <ul>
+            <li>Neben dem Studium als Werkstudent</li>
+            <li>
+              Hauptsächlich PHP-Entwicklung mit Pimcore (basierend auf Symfony),
+              aber auch JS-Entwicklung
+            </li>
+            <li>
+              Kontinuierliche Weiterentwicklung einer Website mit mehr als
+              400 000 monatlich aktiven Nutzer*innen
+            </li>
+            <li>
+              Bau von Such-, Sortier- und Filtermöglichkeiten für mehrere
+              Websites mit Elasticsearch
+            </li>
+          </ul>
         </TimelineItem>
       </ul>
     </div>
     <div class="gap-8">
       <h2 class="headline">Bildung</h2>
-      <ul class="gap-8">
+      <ul class="gap-8 timeline-list">
         <div class="timeline">
           {
             (
@@ -175,6 +179,7 @@ import TimelineItem from "../components/TimelineItem.astro";
               Durchführung von Projekten in den Bereichen Web-, Spiele- und
               App-Entwicklung
             </li>
+            <li>Entwicklung mit Java, JS/TS, C#, Dart und Kotlin</li>
             <li>
               Vorraussichtlicher Abschluss im <time datetime="2026-02">
                 Feb. 2026
@@ -189,36 +194,29 @@ import TimelineItem from "../components/TimelineItem.astro";
         >
           <div class="gap-4">
             <h4 class="title-small">Betrieb (Krankikom GmbH)</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
-            </p>
+            <ul>
+              <li>IHK-Note: 2,1</li>
+              <li>Lernen von HTML, CSS und JS</li>
+              <li>
+                Hauptsächlich PHP-Entwicklung mit Pimcore (basierend auf
+                Symfony)
+              </li>
+              <li>Auch TS-Entwicklung mit Ionic und Angular</li>
+              <li>
+                Beteiligung an der Entwicklung von Websites für kleine und große
+                Unternehmen
+              </li>
+            </ul>
           </div>
           <div class="gap-4">
             <h4 class="title-small">
               Berufsschulen (Bertolt-Brecht-Berufskolleg und Kaufmännisches
               Berufskolleg Duisburg-Mitte)
             </h4>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
-            </p>
+            <ul>
+              <li>Schnitt: 1,2</li>
+              <li>Entwicklung mit C++ und Java</li>
+            </ul>
           </div>
         </TimelineItem>
         <TimelineItem
@@ -227,17 +225,17 @@ import TimelineItem from "../components/TimelineItem.astro";
           startDate="2011-09"
           endDate="2019-07"
         >
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-            no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+          <ul>
+            <li>Schnitt: 2,4</li>
+            <li>
+              Abiturfächer: Mathematik (LK), Englisch (LK), Geschichte und
+              Informatik
+            </li>
+            <li>
+              Entwicklung mit Java im Informatik-Unterricht und in der Freizeit
+            </li>
+            <li>Bilinguales Abitur/Unterricht teilweise auf Englisch</li>
+          </ul>
         </TimelineItem>
       </ul>
     </div>
@@ -314,7 +312,7 @@ import TimelineItem from "../components/TimelineItem.astro";
   mdui-button {
     width: 223px;
   }
-  ul {
+  .timeline-list {
     position: relative;
     padding-left: 32px;
   }
@@ -326,6 +324,9 @@ import TimelineItem from "../components/TimelineItem.astro";
     display: flex;
     justify-content: center;
     z-index: 1;
+  }
+  ul {
+    padding-left: 16px;
   }
   @media (min-width: 533px) {
     .introduction {
