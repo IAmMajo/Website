@@ -2,12 +2,13 @@
 import { Image } from "astro:assets";
 import { Button } from "mdui/components/button";
 import { Card } from "mdui/components/card";
-import { Divider } from "mdui/components/divider";
 import Icon from "../components/Icon.astro";
 import applicationPhoto from "../images/application-photo.jpg";
 import githubLogo from "../images/logos/github.svg?raw";
 import Layout from "../layouts/Layout.astro";
+import Timeline from "../components/Timeline.astro";
 import TimelineItem from "../components/TimelineItem.astro";
+import CvTabs from "../components/CvTabs.astro";
 ---
 
 <Layout title="Mein Lebenslauf">
@@ -123,122 +124,106 @@ import TimelineItem from "../components/TimelineItem.astro";
         )
       }
     </div>
-    <div class="gap-8">
-      <h2 class="headline">Berufserfahrung</h2>
-      <ul class="timeline-list">
-        <div class="timeline">
-          {
-            (
-              // @ts-expect-error
-              <Divider vertical />
-            )
-          }
+    <Timeline headline="Berufserfahrung">
+      <TimelineItem
+        title="Backend-Entwickler"
+        entity="Krankikom GmbH"
+        startDate="2022-07"
+      >
+        <ul class="gap-8">
+          <li>Neben dem Studium als Werkstudent</li>
+          <li>
+            Hauptsächlich PHP-Entwicklung mit Pimcore (basierend auf Symfony),
+            aber auch JS-Entwicklung
+          </li>
+          <li>
+            Kontinuierliche Weiterentwicklung einer Website mit mehr als 400 000
+            monatlich aktiven Nutzer*innen
+          </li>
+          <li>
+            Implementierung von Such-, Sortier- und Filtermöglichkeiten für
+            mehrere Websites mit Elasticsearch
+          </li>
+        </ul>
+      </TimelineItem>
+    </Timeline>
+    <Timeline headline="Bildung">
+      <TimelineItem
+        title="Medieninformatik B.Sc."
+        entity="Hochschule Rhein-Waal"
+        startDate="2022-09"
+      >
+        <ul class="gap-8">
+          <li>Aktueller Schnitt: 1,8</li>
+          <li>
+            Durchführung von Projekten in den Bereichen Web-, Spiele- und
+            App-Entwicklung
+          </li>
+          <li>Entwicklung mit Java, JS/TS, C#, Dart und Kotlin</li>
+          <li>
+            Verwendung von Bootstrap, Angular, React, Astro, Express, Unity,
+            Flutter und Jetpack Compose
+          </li>
+          <li>
+            Vorraussichtlicher Abschluss im <time datetime="2026-02">
+              Feb. 2026
+            </time>
+          </li>
+        </ul>
+      </TimelineItem>
+      <TimelineItem
+        title="Fachinformatiker Anwendungsentwicklung"
+        startDate="2019-08"
+        endDate="2022-06"
+      >
+        <div class="gap-4">
+          <h2 class="title-small">Betrieb (Krankikom GmbH)</h2>
+          <ul class="gap-8">
+            <li>IHK-Note: 2,1</li>
+            <li>Lernen von HTML, CSS und JS</li>
+            <li>
+              Hauptsächlich PHP-Entwicklung mit Pimcore (basierend auf Symfony)
+            </li>
+            <li>Auch TS-Entwicklung mit Ionic und Angular</li>
+            <li>
+              Beteiligung an der Entwicklung von Websites für kleine und große
+              Unternehmen
+            </li>
+          </ul>
         </div>
-        <TimelineItem
-          title="Backend-Entwickler"
-          entity="Krankikom GmbH"
-          startDate="2022-07"
-        >
-          <ul>
-            <li>Neben dem Studium als Werkstudent</li>
-            <li>
-              Hauptsächlich PHP-Entwicklung mit Pimcore (basierend auf Symfony),
-              aber auch JS-Entwicklung
-            </li>
-            <li>
-              Kontinuierliche Weiterentwicklung einer Website mit mehr als
-              400 000 monatlich aktiven Nutzer*innen
-            </li>
-            <li>
-              Bau von Such-, Sortier- und Filtermöglichkeiten für mehrere
-              Websites mit Elasticsearch
-            </li>
+        <div class="gap-4">
+          <h2 class="title-small">
+            Berufsschulen (Bertolt-Brecht-Berufskolleg und Kaufmännisches
+            Berufskolleg Duisburg-Mitte)
+          </h2>
+          <ul class="gap-8">
+            <li>Schnitt: 1,2</li>
+            <li>Entwicklung mit C++ und Java</li>
           </ul>
-        </TimelineItem>
-      </ul>
-    </div>
-    <div class="gap-8">
-      <h2 class="headline">Bildung</h2>
-      <ul class="gap-8 timeline-list">
-        <div class="timeline">
-          {
-            (
-              // @ts-expect-error
-              <Divider vertical />
-            )
-          }
         </div>
-        <TimelineItem
-          title="Medieninformatik B.Sc."
-          entity="Hochschule Rhein-Waal"
-          startDate="2022-09"
-        >
-          <ul>
-            <li>Aktueller Schnitt: 1,8</li>
-            <li>
-              Durchführung von Projekten in den Bereichen Web-, Spiele- und
-              App-Entwicklung
-            </li>
-            <li>Entwicklung mit Java, JS/TS, C#, Dart und Kotlin</li>
-            <li>
-              Vorraussichtlicher Abschluss im <time datetime="2026-02">
-                Feb. 2026
-              </time>
-            </li>
-          </ul>
-        </TimelineItem>
-        <TimelineItem
-          title="Fachinformatiker Anwendungsentwicklung"
-          startDate="2019-08"
-          endDate="2022-06"
-        >
-          <div class="gap-4">
-            <h4 class="title-small">Betrieb (Krankikom GmbH)</h4>
-            <ul>
-              <li>IHK-Note: 2,1</li>
-              <li>Lernen von HTML, CSS und JS</li>
-              <li>
-                Hauptsächlich PHP-Entwicklung mit Pimcore (basierend auf
-                Symfony)
-              </li>
-              <li>Auch TS-Entwicklung mit Ionic und Angular</li>
-              <li>
-                Beteiligung an der Entwicklung von Websites für kleine und große
-                Unternehmen
-              </li>
-            </ul>
-          </div>
-          <div class="gap-4">
-            <h4 class="title-small">
-              Berufsschulen (Bertolt-Brecht-Berufskolleg und Kaufmännisches
-              Berufskolleg Duisburg-Mitte)
-            </h4>
-            <ul>
-              <li>Schnitt: 1,2</li>
-              <li>Entwicklung mit C++ und Java</li>
-            </ul>
-          </div>
-        </TimelineItem>
-        <TimelineItem
-          title="Abitur"
-          entity="Gymnasium Rheinkamp Europaschule Moers"
-          startDate="2011-09"
-          endDate="2019-07"
-        >
-          <ul>
-            <li>Schnitt: 2,4</li>
-            <li>
-              Abiturfächer: Mathematik (LK), Englisch (LK), Geschichte und
-              Informatik
-            </li>
-            <li>
-              Entwicklung mit Java im Informatik-Unterricht und in der Freizeit
-            </li>
-            <li>Bilinguales Abitur/Unterricht teilweise auf Englisch</li>
-          </ul>
-        </TimelineItem>
-      </ul>
-    </div>
+      </TimelineItem>
+      <TimelineItem
+        title="Abitur"
+        entity="Gymnasium Rheinkamp Europaschule Moers"
+        startDate="2011-09"
+        endDate="2019-07"
+      >
+        <ul class="gap-8">
+          <li>Schnitt: 2,4</li>
+          <li>
+            Abiturfächer: Mathematik (LK), Englisch (LK), Geschichte und
+            Informatik
+          </li>
+          <li>
+            Entwicklung mit Java im Informatik-Unterricht und in der Freizeit
+          </li>
+          <li>Bilinguales Abitur / Unterricht teilweise auf Englisch</li>
+        </ul>
+      </TimelineItem>
+    </Timeline>
+    <CvTabs class="screen" />
+    <CvTabs class="print" />
+    <CvTabs class="print" value="certificates-and-prizes" />
   </main>
 </Layout>
 <style>
@@ -271,7 +256,7 @@ import TimelineItem from "../components/TimelineItem.astro";
   }
   main {
     padding: 16px;
-    max-width: 792px;
+    max-width: 776px;
     margin: auto;
   }
   mdui-card {
@@ -311,19 +296,6 @@ import TimelineItem from "../components/TimelineItem.astro";
   }
   mdui-button {
     width: 223px;
-  }
-  .timeline-list {
-    position: relative;
-    padding-left: 32px;
-  }
-  .timeline {
-    position: absolute;
-    left: 0;
-    width: 32px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
   }
   ul {
     padding-left: 16px;

@@ -50,6 +50,10 @@ body {
 .dark {
   display: none;
 }
+.print {
+  visibility: hidden;
+  position: absolute;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -63,5 +67,15 @@ body {
   }
   .invert {
     filter: invert(1);
+  }
+}
+
+@media print {
+  .screen {
+    display: none;
+  }
+  .print {
+    visibility: unset;
+    position: unset;
   }
 }

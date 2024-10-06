@@ -1,0 +1,52 @@
+---
+import { Divider } from "mdui/components/divider";
+
+interface Props {
+  headline: string;
+}
+
+const { headline } = Astro.props;
+---
+
+<div class="gap-8">
+  <h2 class="headline">{headline}</h2>
+  <div class="items">
+    <div class="line">
+      {
+        (
+          // @ts-expect-error
+          <Divider vertical />
+        )
+      }
+    </div>
+    <ul class="gap-8">
+      <slot />
+    </ul>
+  </div>
+</div>
+<style>
+  h2,
+  ul {
+    margin: 0;
+  }
+  .gap-8 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .items {
+    position: relative;
+  }
+  .line {
+    position: absolute;
+    left: 0;
+    width: 32px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+  }
+  ul {
+    padding-left: 32px;
+  }
+</style>

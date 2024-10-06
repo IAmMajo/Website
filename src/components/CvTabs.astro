@@ -1,0 +1,56 @@
+---
+import { Tabs } from "mdui/components/tabs";
+
+interface Props {
+  value?: "languages" | "certificates-and-prizes";
+  class: string;
+}
+
+const { value = "languages", class: className } = Astro.props;
+---
+
+{
+  (
+    // @ts-expect-error
+    <Tabs client:only="lit" class={className} value={value} variant="secondary">
+      <mdui-tab value="languages">Sprachen</mdui-tab>
+      <mdui-tab value="certificates-and-prizes">
+        Zertifikate und Preise
+      </mdui-tab>
+      <mdui-tab-panel slot="panel" value="languages">
+        Panel 1
+      </mdui-tab-panel>
+      <mdui-tab-panel slot="panel" value="certificates-and-prizes">
+        <ul>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+            quos.
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+            quos.
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+            quos.
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+            quos.
+          </li>
+        </ul>
+      </mdui-tab-panel>
+    </Tabs>
+  )
+}
+<style>
+  mdui-tab-panel {
+    padding-top: 8px;
+  }
+  ul {
+    margin: 0;
+    padding-left: 16px;
+  }
+</style>
+<script src="mdui/components/tab.js"></script>
+<script src="mdui/components/tab-panel.js"></script>
