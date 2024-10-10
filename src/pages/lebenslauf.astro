@@ -130,7 +130,7 @@ import CvTabs from "../components/CvTabs.astro";
         entity="Krankikom GmbH"
         startDate="2022-07"
       >
-        <ul class="gap-8">
+        <ul class="gap-4">
           <li>Neben dem Studium als Werkstudent</li>
           <li>
             Hauptsächlich PHP-Entwicklung mit Pimcore (basierend auf Symfony),
@@ -153,7 +153,7 @@ import CvTabs from "../components/CvTabs.astro";
         entity="Hochschule Rhein-Waal"
         startDate="2022-09"
       >
-        <ul class="gap-8">
+        <ul class="gap-4">
           <li>Aktueller Schnitt: 1,8</li>
           <li>
             Durchführung von Projekten in den Bereichen Web-, Spiele- und
@@ -178,7 +178,7 @@ import CvTabs from "../components/CvTabs.astro";
       >
         <div class="gap-4">
           <h2 class="title-small">Betrieb (Krankikom GmbH)</h2>
-          <ul class="gap-8">
+          <ul class="gap-4">
             <li>IHK-Note: 2,1</li>
             <li>Lernen von HTML, CSS und JS</li>
             <li>
@@ -196,7 +196,7 @@ import CvTabs from "../components/CvTabs.astro";
             Berufsschulen (Bertolt-Brecht-Berufskolleg und Kaufmännisches
             Berufskolleg Duisburg-Mitte)
           </h2>
-          <ul class="gap-8">
+          <ul class="gap-4">
             <li>Schnitt: 1,2</li>
             <li>Entwicklung mit C++ und Java</li>
           </ul>
@@ -208,7 +208,7 @@ import CvTabs from "../components/CvTabs.astro";
         startDate="2011-09"
         endDate="2019-07"
       >
-        <ul class="gap-8">
+        <ul class="gap-4">
           <li>Schnitt: 2,4</li>
           <li>
             Abiturfächer: Mathematik (LK), Englisch (LK), Geschichte und
@@ -223,7 +223,7 @@ import CvTabs from "../components/CvTabs.astro";
     </Timeline>
     <CvTabs class="screen" />
     <CvTabs class="print" />
-    <CvTabs class="print" value="certificates-and-prizes" />
+    <CvTabs class="print" value="additional-qualifications" />
   </main>
 </Layout>
 <style>
@@ -255,9 +255,12 @@ import CvTabs from "../components/CvTabs.astro";
     gap: 16px;
   }
   main {
-    padding: 16px;
+    padding: 16px 0;
     max-width: 776px;
     margin: auto;
+  }
+  .introduction {
+    padding: 0 16px;
   }
   mdui-card {
     padding: 16px;
@@ -318,6 +321,9 @@ import CvTabs from "../components/CvTabs.astro";
   @media (min-width: 600px) {
     main {
       padding: 24px;
+    }
+    .introduction {
+      padding: unset;
     }
   }
 </style>

@@ -1,0 +1,49 @@
+---
+import { LinearProgress } from "mdui/components/linear-progress";
+
+interface Props {
+  name: string;
+  level?: 1 | 2 | 3;
+}
+
+const { name, level = 1 } = Astro.props;
+---
+
+<div class="gap-4">
+  {name}
+  <div class="level">
+    {
+      (
+        // @ts-expect-error
+        <LinearProgress client:only="lit" value={1} />
+      )
+    }
+    {
+      (
+        // @ts-expect-error
+        <LinearProgress client:only="lit" value={level > 1 ? 1 : 0} />
+      )
+    }
+    {
+      (
+        // @ts-expect-error
+        <LinearProgress client:only="lit" value={level === 3 ? 1 : 0} />
+      )
+    }
+  </div>
+</div>
+<style>
+  .gap-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .level {
+    display: flex;
+    gap: 4px;
+  }
+  mdui-linear-progress {
+    border-radius: var(--mdui-shape-corner-full);
+    background-color: rgba(var(--mdui-color-secondary-container));
+  }
+</style>

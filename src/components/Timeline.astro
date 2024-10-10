@@ -8,7 +8,7 @@ interface Props {
 const { headline } = Astro.props;
 ---
 
-<div class="gap-8">
+<div class="timeline gap-8">
   <h2 class="headline">{headline}</h2>
   <div class="items">
     <div class="line">
@@ -34,6 +34,9 @@ const { headline } = Astro.props;
     flex-direction: column;
     gap: 8px;
   }
+  .timeline {
+    padding: 0 16px;
+  }
   .items {
     position: relative;
   }
@@ -48,5 +51,10 @@ const { headline } = Astro.props;
   }
   ul {
     padding-left: 32px;
+  }
+  @media (min-width: 600px) {
+    .timeline {
+      padding: unset;
+    }
   }
 </style>

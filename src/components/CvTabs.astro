@@ -1,8 +1,9 @@
 ---
 import { Tabs } from "mdui/components/tabs";
+import Skill from "./Skill.astro";
 
 interface Props {
-  value?: "languages" | "certificates-and-prizes";
+  value?: "languages" | "additional-qualifications";
   class: string;
 }
 
@@ -14,42 +15,84 @@ const { value = "languages", class: className } = Astro.props;
     // @ts-expect-error
     <Tabs client:only="lit" class={className} value={value} variant="secondary">
       <mdui-tab value="languages">Sprachen</mdui-tab>
-      <mdui-tab value="certificates-and-prizes">
-        Zertifikate und Preise
+      <mdui-tab value="additional-qualifications">
+        Zusatzqualifikationen
       </mdui-tab>
       <mdui-tab-panel slot="panel" value="languages">
-        Panel 1
+        <div class="languages">
+          <Skill name="PHP" level={3} />
+          <Skill name="JS/TS" level={3} />
+          <Skill name="Java" level={2} />
+          <Skill name="SQL" level={2} />
+          <Skill name="C#" />
+          <Skill name="Dart" />
+          <Skill name="Kotlin" />
+        </div>
       </mdui-tab-panel>
-      <mdui-tab-panel slot="panel" value="certificates-and-prizes">
-        <ul>
-          <li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quos.
-          </li>
-          <li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quos.
-          </li>
-          <li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quos.
-          </li>
-          <li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quos.
-          </li>
-        </ul>
+      <mdui-tab-panel slot="panel" class="mdui-prose" value="additional-qualifications">
+        <table>
+          <tr>
+            <td>
+              Teilnahme am Endausscheid des Schülerwettbewerbs „Ideenflug“ der
+              Airbus Group
+            </td>
+            <td>
+              <time datetime="2016-12">Dez. 2016</time>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Sonderpreis beim „Jugend forscht“-Landeswettbewerb
+              Nordrhein-Westfalen
+            </td>
+            <td>
+              <time datetime="2016-03">März 2016</time>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              1. Preis beim „Jugend forscht“-Regionalwettbewerb Niederrhein in
+              dem Fachgebiet Technik
+            </td>
+            <td>
+              <time datetime="2016-02">Feb. 2016</time>
+            </td>
+          </tr>
+        </table>
       </mdui-tab-panel>
     </Tabs>
   )
 }
 <style>
-  mdui-tab-panel {
-    padding-top: 8px;
-  }
-  ul {
+  table {
     margin: 0;
-    padding-left: 16px;
+  }
+  .gap-8 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  mdui-tab {
+    flex: 1;
+  }
+  mdui-tab-panel {
+    padding: 8px 16px 0;
+  }
+  .languages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  td:last-child {
+    text-align: right;
+  }
+  @media (min-width: 600px) {
+    mdui-tab {
+      flex: unset;
+    }
+    mdui-tab-panel {
+      padding: 8px 0 0;
+    }
   }
 </style>
 <script src="mdui/components/tab.js"></script>
