@@ -1,10 +1,19 @@
 ---
+import { Button } from "mdui/components/button";
 import Layout from "../layouts/Layout.astro";
 import Account from "../components/Account.astro";
 ---
 
 <Layout title="Max Overlack">
   <main>
+    {
+      (
+        // @ts-expect-error
+        <Button client:load href="/lebenslauf" target="_blank" full-width>
+          Zu meinem Lebenslauf
+        </Button>
+      )
+    }
     <section>
       <h2 class="headline">Social Media</h2>
       <div class="category">
@@ -339,7 +348,8 @@ import Account from "../components/Account.astro";
     margin: auto;
     padding: 16px 12px 12px;
   }
-  h2, h3 {
+  h2,
+  h3 {
     margin-left: 4px;
     margin-right: 4px;
   }
