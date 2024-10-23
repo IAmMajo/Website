@@ -29,59 +29,76 @@ const { value = "languages", class: className } = Astro.props;
           <Skill name="Kotlin" />
         </div>
       </mdui-tab-panel>
-      <mdui-tab-panel slot="panel" class="mdui-prose" value="additional-qualifications">
-        <table>
-          <tr>
-            <td>
-              Teilnahme am Endausscheid des Schülerwettbewerbs „Ideenflug“ der
-              Airbus Group
-            </td>
-            <td>
-              <time datetime="2016-12">Dez. 2016</time>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Sonderpreis beim „Jugend forscht“-Landeswettbewerb
-              Nordrhein-Westfalen
-            </td>
-            <td>
-              <time datetime="2016-03">März 2016</time>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              1. Preis beim „Jugend forscht“-Regionalwettbewerb Niederrhein in
-              dem Fachgebiet Technik
-            </td>
-            <td>
-              <time datetime="2016-02">Feb. 2016</time>
-            </td>
-          </tr>
-        </table>
+      <mdui-tab-panel slot="panel" class="mdui-table" value="additional-qualifications">
+          <table>
+            <tr>
+              <td>Zertifizierung als Ibexa-Entwickler</td>
+              <td>
+                <time datetime="2021-06">Juni 2021</time>
+              </td>
+            </tr>
+            <tr>
+              <td>Zertifizierung als Pimcore-Junior-Entwickler</td>
+              <td>
+                <time datetime="2021-02">Feb. 2021</time>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Teilnahme am Endausscheid des Schülerwettbewerbs „Ideenflug“ der
+                Airbus Group
+              </td>
+              <td>
+                <time datetime="2016-12">Dez. 2016</time>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Sonderpreis beim „Jugend forscht“-Landeswettbewerb
+                Nordrhein-Westfalen
+              </td>
+              <td>
+                <time datetime="2016-03">März 2016</time>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                1. Preis beim „Jugend forscht“-Regionalwettbewerb Niederrhein im
+                Fachgebiet Technik
+              </td>
+              <td>
+                <time datetime="2016-02">Feb. 2016</time>
+              </td>
+            </tr>
+          </table>
       </mdui-tab-panel>
     </Tabs>
   )
 }
 <style>
-  table {
-    margin: 0;
-  }
   .gap-8 {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
+  mdui-tabs::part(container) {
+    overflow: unset;
+  }
   mdui-tab {
     flex: 1;
   }
   mdui-tab-panel {
-    padding: 8px 16px 0;
+    margin: 8px 16px 0;
+    width: unset;
   }
   .languages {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
+  }
+  .mdui-table td {
+    padding: 8px 16px;
+    vertical-align: middle;
   }
   td:last-child {
     text-align: right;
@@ -91,7 +108,7 @@ const { value = "languages", class: className } = Astro.props;
       flex: unset;
     }
     mdui-tab-panel {
-      padding: 8px 0 0;
+      margin: 8px 0 0;
     }
   }
 </style>

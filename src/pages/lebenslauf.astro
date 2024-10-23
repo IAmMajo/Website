@@ -58,28 +58,27 @@ import CvTabs from "../components/CvTabs.astro";
               <h2 class="headline">Profil</h2>
               <div class="gap-16">
                 <p>
-                  Duis autem vel eum iriure dolor in hendrerit in vulputate
-                  velit esse molestie consequat, vel illum dolore eu feugiat
-                  nulla facilisis at vero eros et accumsan et iusto odio
-                  dignissim qui blandit praesent luptatum zzril delenit augue
-                  duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit
-                  amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                  euismod tincidunt ut laoreet dolore magna aliquam erat
-                  volutpat.
+                  Ich bin ein engagierter und ergebnisorientierter Student der
+                  Medieninformatik mit mehr als fünf Jahren praktischer
+                  Erfahrung in der Webentwicklung. Neben meinem Studium arbeite
+                  ich als Werkstudent bei Krankikom, wo ich hauptsächlich in der
+                  PHP-Entwicklung mit Pimcore (basierend auf Symfony) tätig bin.
+                  Auch die Frontend-Entwicklung mit JavaScript gehört zu meinen
+                  Aufgaben.
                 </p>
                 <p>
-                  Nam liber tempor cum soluta nobis eleifend option congue nihil
-                  imperdiet doming id quod mazim placerat facer possim assum.
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                  aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                  nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                  aliquip ex ea commodo consequat.
+                  Meine Begeisterung für Technik und IT begann schon in der
+                  Schule, als ich bei „Jugend forscht“ einen ersten Preis auf
+                  Regionalebene gewann. Nach dem Abitur entschied ich mich für
+                  eine Ausbildung zum Fachinformatiker für Anwendungsentwicklung
+                  bei Krankikom.
                 </p>
                 <p>
-                  Duis autem vel eum iriure dolor in hendrerit in vulputate
-                  velit esse molestie consequat, vel illum dolore eu feugiat
-                  nulla facilisis.
+                  Mit einem breiten technischen Wissen und einer großen
+                  Leidenschaft für Softwarelösungen strebe ich eine Karriere in
+                  der Web- und Softwareentwicklung an. Mein Ziel ist es,
+                  komplexen Herausforderungen mit kreativen und effizienten
+                  Lösungen zu begegnen und mein Wissen ständig zu erweitern.
                 </p>
               </div>
             </div>
@@ -274,24 +273,17 @@ import CvTabs from "../components/CvTabs.astro";
     justify-content: center;
     flex: 1;
   }
+  img {
+    border-radius: var(--mdui-shape-corner-medium);
+  }
   .facts {
     flex: 1;
     min-width: 206px;
-  }
-  img {
-    border-radius: var(--mdui-shape-corner-medium);
   }
   .fact {
     display: flex;
     gap: 1ch;
     align-items: center;
-  }
-  .github :global(svg) {
-    width: 24px;
-    height: 24px;
-  }
-  .github :global(path) {
-    fill: currentColor;
   }
   .buttons {
     justify-content: center;
@@ -299,6 +291,13 @@ import CvTabs from "../components/CvTabs.astro";
   }
   mdui-button {
     width: 223px;
+  }
+  .github :global(svg) {
+    width: 24px;
+    height: 24px;
+  }
+  .github :global(path) {
+    fill: currentColor;
   }
   ul {
     padding-left: 16px;
