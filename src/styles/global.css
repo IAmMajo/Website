@@ -9,13 +9,22 @@
   font-display: swap;
 }
 
-body {
+body,
+p {
   margin: 0;
+}
+body {
   font-family: "Roboto Flex", sans-serif;
   line-height: var(--mdui-typescale-body-medium-line-height);
   font-weight: var(--mdui-typescale-body-medium-weight);
   font-size: var(--mdui-typescale-body-medium-size);
   letter-spacing: var(--mdui-typescale-body-medium-tracking);
+}
+.display {
+  line-height: var(--mdui-typescale-display-medium-line-height);
+  font-weight: var(--mdui-typescale-display-medium-weight);
+  font-size: var(--mdui-typescale-display-medium-size);
+  letter-spacing: var(--mdui-typescale-display-medium-tracking);
 }
 .display-small {
   line-height: var(--mdui-typescale-display-small-line-height);
@@ -46,6 +55,12 @@ body {
   font-weight: var(--mdui-typescale-title-small-weight);
   font-size: var(--mdui-typescale-title-small-size);
   letter-spacing: var(--mdui-typescale-title-small-tracking);
+}
+.body-large {
+  line-height: var(--mdui-typescale-body-large-line-height);
+  font-weight: var(--mdui-typescale-body-large-weight);
+  font-size: var(--mdui-typescale-body-large-size);
+  letter-spacing: var(--mdui-typescale-body-large-tracking);
 }
 .dark {
   display: none;

@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { Card } from "mdui/components/card";
+import GithubButton from "./GithubButton.astro";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+
+const { Content } = await project.render();
+---
+
+<Card>
+  <Image
+    src={project.data.image}
+    width={792}
+    height={446}
+    densities={[1, 2, 3, 4]}
+    format="avif"
+    alt=""
+  />
+  <div class="below-image gap-8">
+    <h2 class="title">{project.data.title}</h2>
+    <div class="content gap-16">
+      <Content />
+      <div class="buttons gap-8">
+        <GithubButton
+          path={project.data.githubRepository}
+          urlPath={project.data.githubUrlPath}
+        />
+      </div>
+    </div>
+  </div>
+</Card>
+
+<style>
+  h2 {
+    margin: 0;
+  }
+  .gap-8 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .gap-16 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  mdui-card {
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
+  }
+  .below-image {
+    padding: 16px;
+  }
+  .buttons {
+    flex-flow: row wrap;
+  }
+</style>

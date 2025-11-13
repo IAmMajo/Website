@@ -34,8 +34,11 @@ const { headline } = Astro.props;
     flex-direction: column;
     gap: 8px;
   }
+  h2 {
+    break-after: avoid;
+  }
   .timeline {
-    padding: 0 16px;
+    margin: 0 16px;
   }
   .items {
     position: relative;
@@ -54,7 +57,7 @@ const { headline } = Astro.props;
   }
   @media (min-width: 600px) {
     .timeline {
-      padding: unset;
+      margin: unset;
     }
   }
 </style>

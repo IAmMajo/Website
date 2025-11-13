@@ -20,8 +20,8 @@ const { value = "languages", class: className } = Astro.props;
       </mdui-tab>
       <mdui-tab-panel slot="panel" value="languages">
         <div class="languages">
-          <Skill name="PHP" level={3} />
           <Skill name="JS/TS" level={3} />
+          <Skill name="PHP" level={3} />
           <Skill name="Java" level={2} />
           <Skill name="SQL" level={2} />
           <Skill name="C#" />
@@ -30,54 +30,58 @@ const { value = "languages", class: className } = Astro.props;
           <Skill name="Swift" />
         </div>
       </mdui-tab-panel>
-      <mdui-tab-panel slot="panel" class="mdui-table" value="additional-qualifications">
-          <table>
-            <tr>
-              <td>Zertifizierung als Ibexa-Entwickler</td>
-              <td>
-                <time datetime="2021-06">Juni 2021</time>
-              </td>
-            </tr>
-            <tr>
-              <td>Zertifizierung als Pimcore-Junior-Entwickler</td>
-              <td>
-                <time datetime="2021-02">Feb. 2021</time>
-              </td>
-            </tr>
-            <tr>
-              <td>Zertifizierung über C1-Englischkenntnisse</td>
-              <td>
-                <time datetime="2019-07">Juli 2019</time>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Teilnahme am Endausscheid des Schülerwettbewerbs „Ideenflug“ der
-                Airbus Group
-              </td>
-              <td>
-                <time datetime="2016-12">Dez. 2016</time>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Sonderpreis beim „Jugend forscht“-Landeswettbewerb
-                Nordrhein-Westfalen
-              </td>
-              <td>
-                <time datetime="2016-03">März 2016</time>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                1. Preis beim „Jugend forscht“-Regionalwettbewerb Niederrhein im
-                Fachgebiet Technik
-              </td>
-              <td>
-                <time datetime="2016-02">Feb. 2016</time>
-              </td>
-            </tr>
-          </table>
+      <mdui-tab-panel
+        slot="panel"
+        class="mdui-table"
+        value="additional-qualifications"
+      >
+        <table>
+          <tr>
+            <td>Zertifizierung als Ibexa-Entwickler</td>
+            <td>
+              <time datetime="2021-06">Juni 2021</time>
+            </td>
+          </tr>
+          <tr>
+            <td>Zertifizierung als Pimcore-Junior-Entwickler</td>
+            <td>
+              <time datetime="2021-02">Feb. 2021</time>
+            </td>
+          </tr>
+          <tr>
+            <td>Zertifizierung über C1-Englischkenntnisse</td>
+            <td>
+              <time datetime="2019-07">Juli 2019</time>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Teilnahme am Endausscheid des Schülerwettbewerbs „Ideenflug“ der
+              Airbus Group
+            </td>
+            <td>
+              <time datetime="2016-12">Dez. 2016</time>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Sonderpreis beim „Jugend forscht“-Landeswettbewerb
+              Nordrhein-Westfalen
+            </td>
+            <td>
+              <time datetime="2016-03">März 2016</time>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              1. Preis beim „Jugend forscht“-Regionalwettbewerb Niederrhein im
+              Fachgebiet Technik
+            </td>
+            <td>
+              <time datetime="2016-02">Feb. 2016</time>
+            </td>
+          </tr>
+        </table>
       </mdui-tab-panel>
     </Tabs>
   )
@@ -87,6 +91,9 @@ const { value = "languages", class: className } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: 8px;
+  }
+  mdui-tabs {
+    break-inside: avoid;
   }
   mdui-tabs::part(container) {
     overflow: unset;

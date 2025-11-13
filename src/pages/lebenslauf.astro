@@ -4,11 +4,11 @@ import { Button } from "mdui/components/button";
 import { Card } from "mdui/components/card";
 import Icon from "../components/Icon.astro";
 import applicationPhoto from "../images/application-photo.jpg";
-import githubLogo from "../images/logos/github.svg?raw";
 import Layout from "../layouts/Layout.astro";
 import Timeline from "../components/Timeline.astro";
 import TimelineItem from "../components/TimelineItem.astro";
 import CvTabs from "../components/CvTabs.astro";
+import GithubButton from "../components/GithubButton.astro";
 ---
 
 <Layout title="Mein Lebenslauf">
@@ -56,26 +56,24 @@ import CvTabs from "../components/CvTabs.astro";
               <div class="gap-16">
                 <p>
                   Ich bin ein engagierter und ergebnisorientierter Student der
-                  Medieninformatik mit mehr als fünf Jahren praktischer
-                  Erfahrung in der Webentwicklung. Neben meinem Studium arbeite
-                  ich als Werkstudent bei Krankikom. Dort bin ich hauptsächlich
-                  in der PHP-Entwicklung mit Pimcore (basierend auf Symfony)
-                  tätig. Auch die Frontend-Entwicklung mit JavaScript gehört zu
+                  Medieninformatik mit mehr als sechs Jahren praktischer
+                  Erfahrung in der Webentwicklung. Neben dem Studium arbeite ich
+                  als Werkstudent bei FoxBase. Dort bin ich hauptsächlich in der
+                  TS-Entwicklung im Backend mit Express tätig. Aber auch die
+                  TS-Entwicklung im Frontend mit Angular und Vue gehöhrt zu
                   meinen Aufgaben.
                 </p>
                 <p>
-                  Meine Begeisterung für Technik und IT begann schon in der
-                  Schule, wo ich bei „Jugend forscht“ einen ersten Preis auf
-                  Regionalebene gewann. Nach dem Abitur entschied ich mich für
-                  eine Ausbildung zum Fachinformatiker für Anwendungsentwicklung
-                  bei Krankikom.
+                  Nach meinem Abitur entschied ich mich für eine Ausbildung zum
+                  Fachinformatiker für Anwendungsentwicklung bei Krankikom. Im
+                  Anschluss war ich dort bis zum Praxissemester als Werkstudent
+                  tätig. Bei Krankikom habe ich hauptsächlich in der
+                  PHP-Entwicklung mit Pimcore (basierend auf Symfony)
+                  gearbeitet.
                 </p>
                 <p>
-                  Mit einem breiten technischen Wissen und einer großen
-                  Leidenschaft für Softwarelösungen strebe ich eine Karriere in
-                  der Web- und Softwareentwicklung an. Mein Ziel ist es,
-                  komplexen Herausforderungen mit kreativen und effizienten
-                  Lösungen zu begegnen.
+                  Mein Ziel ist es, komplexen Herausforderungen mit kreativen
+                  und effizienten Lösungen zu begegnen.
                 </p>
               </div>
             </div>
@@ -102,25 +100,45 @@ import CvTabs from "../components/CvTabs.astro";
                   <Icon slot="icon" name="mail" /> example@example.com
                 </Button>
               */}
-              {
-                // @ts-expect-error
-                <Button
-                  client:load
-                  variant="text"
-                  class="github"
-                  href="https://github.com/IAmMajo"
-                  target="_blank"
-                >
-                  <Fragment slot="icon" set:html={githubLogo} />
-                  github.com/IAmMajo
-                </Button>
-              }
+              <GithubButton path="IAmMajo" />
             </div>
           </Card>
         )
       }
     </div>
+    {
+      (
+        // @ts-expect-error
+        <Card class="projects body-large" variant="filled">
+          <p>Sie interessieren sich für meine Projekte?</p>
+          {
+            // @ts-expect-error
+            <Button
+              client:load
+              variant="tonal"
+              href="https://maxoverlack.dev/Projekte"
+              target="_blank"
+            >
+              <Icon slot="icon" name="attractions" />
+              maxoverlack.dev/Projekte
+            </Button>
+          }
+        </Card>
+      )
+    }
     <Timeline headline="Berufserfahrung">
+      <TimelineItem
+        title="Full-Stack-Entwickler"
+        entity="FoxBase GmbH"
+        startDate="2025-03"
+      >
+        <ul class="gap-4">
+          <li>Erst im Rahmen meines Praxissemesters, danach als Werkstudent</li>
+          <li>Hauptsächlich TS-Entwicklung im Backend mit Express</li>
+          <li>Auch TS-Entwicklung im Frontend mit Angular und Vue</li>
+          <li>Kontinuierliche Weiterentwicklung der FoxBase Workbench</li>
+        </ul>
+      </TimelineItem>
       <TimelineItem
         title="Full-Stack-Entwickler"
         entity="Krankikom GmbH"
@@ -162,8 +180,8 @@ import CvTabs from "../components/CvTabs.astro";
             Flutter und Jetpack Compose
           </li>
           <li>
-            Vorraussichtlicher Abschluss im <time datetime="2026-02">
-              Feb. 2026
+            Vorraussichtlicher Abschluss im <time datetime="2026-03">
+              März 2026
             </time>
           </li>
         </ul>
@@ -230,7 +248,6 @@ import CvTabs from "../components/CvTabs.astro";
   h1,
   h2,
   h4,
-  p,
   ul {
     margin: 0;
   }
@@ -260,7 +277,7 @@ import CvTabs from "../components/CvTabs.astro";
     margin: auto;
   }
   .introduction {
-    padding: 0 16px;
+    margin: 0 16px;
   }
   mdui-card {
     padding: 16px;
@@ -293,12 +310,14 @@ import CvTabs from "../components/CvTabs.astro";
   mdui-button {
     width: 223px;
   }
-  .github :global(svg) {
-    width: 24px;
-    height: 24px;
-  }
-  .github :global(path) {
-    fill: currentColor;
+  .projects {
+    margin: 0 16px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 1ch;
+    justify-content: center;
+    align-items: center;
   }
   ul {
     padding-left: 16px;
@@ -323,7 +342,10 @@ import CvTabs from "../components/CvTabs.astro";
       padding: 24px;
     }
     .introduction {
-      padding: unset;
+      margin: unset;
+    }
+    .projects {
+      margin: unset;
     }
   }
 </style>

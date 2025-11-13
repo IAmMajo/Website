@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Project from "../components/Project.astro";
+
+const projects = await getCollection("projects");
+
+const sortedProjects = projects.sort(
+  (a, b) => b.data.updatedAt.getTime() - a.data.updatedAt.getTime()
+);
+---
+
+<Layout title="Meine Projekte">
+  <main class="gap-8">
+    <h1 class="display">Meine Projekte</h1>
+    <p>
+      Auf dieser Seite finden Sie eine Auswahl an Projekten, die ich in meiner
+      Freizeit oder im Rahmen meines Studiums entwickelt habe.
+    </p>
+    {sortedProjects.map((project) => <Project project={project} />)}
+  </main>
+</Layout>
+<style>
+  h1 {
+    margin: 0;
+  }
+  .gap-8 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  main {
+    padding: 16px;
+    max-width: 792px;
+    margin: auto;
+  }
+  @media (min-width: 600px) {
+    main {
+      padding: 24px;
+    }
+  }
+</style>

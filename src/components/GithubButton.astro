@@ -1,0 +1,34 @@
+---
+import { Button } from "mdui/components/button";
+import githubLogo from "../images/logos/github.svg?raw";
+
+interface Props {
+  path: string;
+  urlPath?: string;
+}
+
+const { path, urlPath = path } = Astro.props;
+---
+
+{
+  // @ts-expect-error
+  <Button
+    client:load
+    variant="text"
+    class="github"
+    href={`https://github.com/${urlPath}`}
+    target="_blank"
+  >
+    <Fragment slot="icon" set:html={githubLogo} />
+    github.com/{path}
+  </Button>
+}
+<style>
+  mdui-button :global(svg) {
+    width: 24px;
+    height: 24px;
+  }
+  mdui-button :global(path) {
+    fill: currentColor;
+  }
+</style>
