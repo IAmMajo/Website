@@ -13,72 +13,73 @@ import GithubButton from "../components/GithubButton.astro";
 
 <Layout title="Mein Lebenslauf">
   <main class="gap-16">
-    <div class="introduction gap-8">
-      {
-        (
-          // @ts-expect-error
-          <Card class="fact-sheet gap-16">
-            <div class="application-photo">
-              <Image
-                src={applicationPhoto}
-                width={206}
-                densities={[1, 2, 3, 4]}
-                format="avif"
-                quality="high"
-                loading="eager"
-                alt="Bewerbungsfoto"
-              />
-            </div>
-            <div class="facts gap-8">
-              <h1 class="display-small">Max Overlack</h1>
-              <div class="gap-5">
-                <div class="fact">
-                  <Icon name="home" /> {/* Musterstr. 100, 12345 */} Moers
-                </div>
-                <div class="fact">
-                  <Icon name="event" />
-                  <time datetime="2001-02-27">27.02.2001</time>
-                </div>
-                <div class="fact">
-                  <Icon name="cake" /> Berlin
+    <div class="gap-8">
+      <div class="introduction gap-8">
+        {
+          (
+            // @ts-expect-error
+            <Card class="fact-sheet gap-16">
+              <div class="application-photo">
+                <Image
+                  src={applicationPhoto}
+                  width={206}
+                  densities={[1, 2, 3, 4]}
+                  format="avif"
+                  quality="high"
+                  loading="eager"
+                  alt="Bewerbungsfoto"
+                />
+              </div>
+              <div class="facts gap-8">
+                <h1 class="display-small">Max Overlack</h1>
+                <div class="gap-5">
+                  <div class="fact">
+                    <Icon name="home" /> {/* Musterstr. 100, 12345 */} Moers
+                  </div>
+                  <div class="fact">
+                    <Icon name="event" />
+                    <time datetime="2001-02-27">27.02.2001</time>
+                  </div>
+                  <div class="fact">
+                    <Icon name="cake" /> Berlin
+                  </div>
                 </div>
               </div>
-            </div>
-          </Card>
-        )
-      }
-      {
-        (
-          // @ts-expect-error
-          <Card class="profile gap-16">
-            <div class="gap-8">
-              <h2 class="headline">Profil</h2>
-              <div class="gap-16">
-                <p>
-                  Ich bin ein engagierter und ergebnisorientierter Student der
-                  Medieninformatik mit mehr als sechs Jahren praktischer
-                  Erfahrung in der Webentwicklung. Neben dem Studium arbeite ich
-                  als Werkstudent bei FoxBase. Dort bin ich hauptsächlich in der
-                  TS-Entwicklung im Backend mit Express tätig. Aber auch die
-                  TS-Entwicklung im Frontend mit Angular und Vue gehöhrt zu
-                  meinen Aufgaben.
-                </p>
-                <p>
-                  Nach meinem Abitur entschied ich mich für eine Ausbildung zum
-                  Fachinformatiker für Anwendungsentwicklung bei Krankikom. Im
-                  Anschluss war ich dort bis zum Praxissemester als Werkstudent
-                  tätig. Bei Krankikom habe ich hauptsächlich in der
-                  PHP-Entwicklung mit Pimcore (basierend auf Symfony)
-                  gearbeitet.
-                </p>
-                <p>
-                  Mein Ziel ist es, komplexen Herausforderungen mit kreativen
-                  und effizienten Lösungen zu begegnen.
-                </p>
+            </Card>
+          )
+        }
+        {
+          (
+            // @ts-expect-error
+            <Card class="profile gap-16">
+              <div class="gap-8">
+                <h2 class="headline">Profil</h2>
+                <div class="gap-16">
+                  <p>
+                    Ich bin ein engagierter und ergebnisorientierter Student der
+                    Medieninformatik mit mehr als sechs Jahren praktischer
+                    Erfahrung in der Webentwicklung. Neben dem Studium arbeite
+                    ich als Werkstudent bei FoxBase. Dort bin ich hauptsächlich
+                    in der TS-Entwicklung im Backend mit Express tätig. Aber
+                    auch die TS-Entwicklung im Frontend mit Angular und Vue
+                    gehöhrt zu meinen Aufgaben.
+                  </p>
+                  <p>
+                    Nach meinem Abitur entschied ich mich für eine Ausbildung
+                    zum Fachinformatiker für Anwendungsentwicklung bei
+                    Krankikom. Im Anschluss war ich dort bis zum Praxissemester
+                    als Werkstudent tätig. Bei Krankikom habe ich hauptsächlich
+                    in der PHP-Entwicklung mit Pimcore (basierend auf Symfony)
+                    gearbeitet.
+                  </p>
+                  <p>
+                    Mein Ziel ist es, komplexen Herausforderungen mit kreativen
+                    und effizienten Lösungen zu begegnen.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="buttons gap-8">
-              {/*
+              <div class="buttons gap-8">
+                {/*
                 // @ts-expect-error
                 <Button
                   client:load
@@ -89,7 +90,7 @@ import GithubButton from "../components/GithubButton.astro";
                   <Icon slot="icon" name="call" /> +49 1234 1234567
                 </Button>
               */}
-              {/*
+                {/*
                 // @ts-expect-error
                 <Button
                   client:load
@@ -100,32 +101,33 @@ import GithubButton from "../components/GithubButton.astro";
                   <Icon slot="icon" name="mail" /> example@example.com
                 </Button>
               */}
-              <GithubButton path="IAmMajo" />
-            </div>
+                <GithubButton path="IAmMajo" />
+              </div>
+            </Card>
+          )
+        }
+      </div>
+      {
+        (
+          // @ts-expect-error
+          <Card class="projects body-large" variant="filled">
+            <p>Sie interessieren sich für meine Projekte?</p>
+            {
+              // @ts-expect-error
+              <Button
+                client:load
+                variant="tonal"
+                href="https://maxoverlack.dev/projekte"
+                target="_blank"
+              >
+                <Icon slot="icon" name="attractions" />
+                maxoverlack.dev/projekte
+              </Button>
+            }
           </Card>
         )
       }
     </div>
-    {
-      (
-        // @ts-expect-error
-        <Card class="projects body-large" variant="filled">
-          <p>Sie interessieren sich für meine Projekte?</p>
-          {
-            // @ts-expect-error
-            <Button
-              client:load
-              variant="tonal"
-              href="https://maxoverlack.dev/Projekte"
-              target="_blank"
-            >
-              <Icon slot="icon" name="attractions" />
-              maxoverlack.dev/Projekte
-            </Button>
-          }
-        </Card>
-      )
-    }
     <Timeline headline="Berufserfahrung">
       <TimelineItem
         title="Full-Stack-Entwickler"
