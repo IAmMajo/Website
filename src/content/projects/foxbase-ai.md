@@ -1,8 +1,8 @@
 ---
 image: ../../images/projects/foxbase-ai.png
-title: Foxbase AI
+title: FoxBase AI
 updatedAt: 2025-02-28
-githubRepository: IAmMajo/Foxbase-AI
+githubRepository: IAmMajo/FoxBase-AI
 ---
 
 Diese Website ist im Rahmen des Moduls „Webentwicklung“ im fünften Semester
