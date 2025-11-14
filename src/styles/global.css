@@ -62,6 +62,9 @@ body {
   font-size: var(--mdui-typescale-body-large-size);
   letter-spacing: var(--mdui-typescale-body-large-tracking);
 }
+a {
+  color: rgb(var(--mdui-color-primary));
+}
 .dark {
   display: none;
 }

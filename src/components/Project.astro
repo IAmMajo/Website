@@ -13,31 +13,32 @@ const { project } = Astro.props;
 const { Content } = await project.render();
 ---
 
-<Card>
-  <Image
-    src={project.data.image}
-    width={792}
-    height={446}
-    densities={[1, 2, 3, 4]}
-    format="avif"
-    alt=""
-  />
-  <div class="below-image gap-8">
-    <h2 class="title">{project.data.title}</h2>
-    <div class="content gap-16">
-      <Content />
-      <div class="buttons gap-8">
-        <GithubButton
-          path={project.data.githubRepository}
-          urlPath={project.data.githubUrlPath}
-        />
+<article>
+  <Card>
+    <Image
+      src={project.data.image}
+      width={792}
+      height={446}
+      densities={[1, 2, 3, 4]}
+      format="avif"
+      alt=""
+    />
+    <div class="below-image gap-8">
+      <h1 class="title">{project.data.title}</h1>
+      <div class="content gap-16">
+        <Content />
+        <div class="buttons gap-8">
+          <GithubButton
+            path={project.data.githubRepository}
+            urlPath={project.data.githubUrlPath}
+          />
+        </div>
       </div>
     </div>
-  </div>
-</Card>
-
+  </Card>
+</article>
 <style>
-  h2 {
+  h1 {
     margin: 0;
   }
   .gap-8 {

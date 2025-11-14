@@ -1,7 +1,7 @@
 ---
 image: ../../images/projects/this-website.png
 title: Diese Website
-updatedAt: 2025-11-13
+updatedAt: 2025-11-14
 githubRepository: IAmMajo/Website
 ---
 

@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Seite existiert nicht">
+  <main class="gap-16">
+    <h1 class="display">Seite existiert nicht</h1>
+    <p>Diese Seite existiert nicht. Gehe zur <a href="/">Home-Seite</a>.</p>
+  </main>
+</Layout>
+<style>
+  h1 {
+    margin: 0;
+  }
+  .gap-16 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  main {
+    padding: 16px;
+    max-width: 760px;
+    margin: auto;
+  }
+  @media (min-width: 600px) {
+    main {
+      padding: 24px;
+    }
+  }
+</style>
