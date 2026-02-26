@@ -9,4 +9,8 @@ Dieser Blog für das Modul „Digital Media Technologien“ ist im vierten Semes
 meines Studiums entstanden. Im Blog wird die Entwicklung einer Tablet-App für
 das [Museum Schloss Moyland](https://moyland.de/) beschrieben. Der Blog basiert
 auf dem Blog-Template von [Astro](https://astro.build/). Die App selbst wurde
-mit [FlutterFlow](https://www.flutterflow.io/) entwickelt.
+mit [FlutterFlow](https://www.flutterflow.io/) entwickelt und kann mittlerweile
+im Raum
+„[Joseph Beuys und der Nationalsozialismus](https://moyland.de/ausstellungen/joseph-beuys-und-der-nationalsozialismus-ein-laborraum/)“
+innerhalb des Museums Schloss Moyland
+benutzt werden.
