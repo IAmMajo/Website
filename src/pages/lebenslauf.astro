@@ -14,7 +14,6 @@ import Layout from "../layouts/Layout.astro";
   <main class="gap-16">
     <div class="gap-8">
       <div class="introduction gap-8">
-        <!-- @ts-expect-error Expression produces a union type that is too complex to represent -->
         <Card variant="elevated">
           <div class="fact-sheet-content gap-16">
             <div class="application-photo">
@@ -110,7 +109,6 @@ import Layout from "../layouts/Layout.astro";
         <Card variant="filled">
           <div class="projects body-large">
             <p>Sie interessieren sich für meine Projekte?</p>
-            <!-- @ts-expect-error Expression produces a union type that is too complex to represent -->
             <Button
               client:load
               variant="tonal"
