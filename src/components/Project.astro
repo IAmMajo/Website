@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
-import { Card } from "mdui/components/card";
+import { render, type CollectionEntry } from "astro:content";
+import { Card } from "m3-svelte";
 import GithubButton from "./GithubButton.astro";
 
 interface Props {
@@ -10,16 +10,18 @@ interface Props {
 
 const { project } = Astro.props;
 
-const { Content } = await project.render();
+const { Content } = await render(project);
 ---
 
-<article>
-  <Card>
+<article class="project">
+  <!-- @ts-expect-error Expression produces a union type that is too complex to represent -->
+  <Card variant="elevated">
     <Image
       src={project.data.image}
+      layout="constrained"
       width={792}
       height={446}
-      densities={[1, 2, 3, 4]}
+      position="top"
       format="avif"
       alt=""
     />
@@ -51,7 +53,9 @@ const { Content } = await project.render();
     flex-direction: column;
     gap: 16px;
   }
-  mdui-card {
+  .project > :global(.m3-container) {
+    padding: 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
   }
@@ -59,8 +63,6 @@ const { Content } = await project.render();
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
-    object-position: top;
   }
   .below-image {
     padding: 16px;

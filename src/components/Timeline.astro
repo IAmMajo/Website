@@ -1,5 +1,5 @@
 ---
-import { Divider } from "mdui/components/divider";
+import { Divider } from "m3-svelte";
 
 interface Props {
   headline: string;
@@ -12,12 +12,7 @@ const { headline } = Astro.props;
   <h2 class="headline">{headline}</h2>
   <div class="items">
     <div class="line">
-      {
-        (
-          // @ts-expect-error
-          <Divider vertical />
-        )
-      }
+      <Divider />
     </div>
     <ul class="gap-8">
       <slot />
@@ -51,6 +46,11 @@ const { headline } = Astro.props;
     display: flex;
     justify-content: center;
     z-index: 1;
+  }
+  .line::before {
+    content: "";
+    width: 1px;
+    background-color: var(--m3c-outline-variant);
   }
   ul {
     padding-left: 32px;

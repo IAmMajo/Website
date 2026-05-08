@@ -1,19 +1,17 @@
 ---
-import { Button } from "mdui/components/button";
-import Layout from "../layouts/Layout.astro";
+import { Button } from "m3-svelte";
 import Account from "../components/Account.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Max Overlack">
   <main>
-    {
-      (
-        // @ts-expect-error
-        <Button client:load variant="tonal" href="/lebenslauf" target="_blank" full-width>
-          Zu meinem Lebenslauf
-        </Button>
-      )
-    }
+    <div class="cv-button">
+      <!-- @ts-expect-error Expression produces a union type that is too complex to represent -->
+      <Button client:load variant="tonal" href="/lebenslauf" target="_blank">
+        Zu meinem Lebenslauf
+      </Button>
+    </div>
     <section>
       <h2 class="headline">Social Media</h2>
       <div class="category">
@@ -344,9 +342,12 @@ import Account from "../components/Account.astro";
 </Layout>
 <style>
   main {
-    max-width: 888px;
+    max-width: 887px;
     margin: auto;
     padding: 16px 12px 12px;
+  }
+  .cv-button :global(.m3-container) {
+    width: 100%;
   }
   h2,
   h3 {

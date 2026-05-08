@@ -1,134 +1,128 @@
 ---
 import { Image } from "astro:assets";
-import { Button } from "mdui/components/button";
-import { Card } from "mdui/components/card";
+import { Button, Card } from "m3-svelte";
+import CvTabs from "../components/CvTabs.svelte";
+import GithubButton from "../components/GithubButton.astro";
 import Icon from "../components/Icon.astro";
-import applicationPhoto from "../images/application-photo.jpg";
-import Layout from "../layouts/Layout.astro";
 import Timeline from "../components/Timeline.astro";
 import TimelineItem from "../components/TimelineItem.astro";
-import CvTabs from "../components/CvTabs.astro";
-import GithubButton from "../components/GithubButton.astro";
+import applicationPhoto from "../images/application-photo.jpg";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Mein Lebenslauf">
   <main class="gap-16">
     <div class="gap-8">
       <div class="introduction gap-8">
-        {
-          (
-            // @ts-expect-error
-            <Card class="fact-sheet gap-16">
-              <div class="application-photo">
-                <Image
-                  src={applicationPhoto}
-                  width={211}
-                  densities={[1, 2, 3, 4]}
-                  format="avif"
-                  quality="high"
-                  loading="eager"
-                  alt="Bewerbungsfoto"
-                />
-              </div>
-              <div class="facts gap-8">
-                <h1 class="display-small">Max Overlack</h1>
-                <div class="gap-5">
-                  <div class="fact">
-                    <Icon name="home" /> {/* Musterstr. 100, 12345 */} Duisburg
-                  </div>
-                  <div class="fact">
-                    <Icon name="event" />
-                    <time datetime="2001-02-27">27.02.2001</time>
-                  </div>
-                  <div class="fact">
-                    <Icon name="cake" /> Berlin
-                  </div>
+        <!-- @ts-expect-error Expression produces a union type that is too complex to represent -->
+        <Card variant="elevated">
+          <div class="fact-sheet-content gap-16">
+            <div class="application-photo">
+              <Image
+                src={applicationPhoto}
+                width={205}
+                densities={[1, 2, 3, 4]}
+                format="avif"
+                quality="high"
+                priority
+                alt="Bewerbungsfoto"
+              />
+            </div>
+            <div class="facts gap-8">
+              <h1 class="display-small">Max Overlack</h1>
+              <div class="gap-5">
+                <div class="fact">
+                  <Icon name="home" />
+                  {/* Musterstr. 100, 12345 */} Duisburg
+                </div>
+                <div class="fact">
+                  <Icon name="event" />
+                  <time datetime="2001-02-27">27.02.2001</time>
+                </div>
+                <div class="fact">
+                  <Icon name="cake" /> Berlin
                 </div>
               </div>
-            </Card>
-          )
-        }
-        {
-          (
-            // @ts-expect-error
-            <Card class="profile gap-16">
-              <div class="gap-8">
-                <h2 class="headline">Profil</h2>
-                <div class="gap-16">
-                  <p>
-                    Als Student der Medieninformatik mit abgeschlossener
-                    Ausbildung zum Fachinformatiker für Anwendungsentwicklung
-                    verbinde ich fundiertes theoretisches Wissen mit mehr als
-                    sechs Jahren praktischer Erfahrung in der Web- und
-                    Softwareentwicklung. Durch meine parallele Tätigkeit als
-                    Werkstudent in der Backend- und Frontend-Entwicklung arbeite
-                    ich kontinuierlich an realen, produktiven Systemen und
-                    übernehme Verantwortung für performante und nachhaltige
-                    Lösungen.
-                  </p>
-                  <p>
-                    Mein technisches Fundament reicht von skalierbarer
-                    PHP-Entwicklung mit Symfony-basierten Systemen bis hin zu
-                    modernen JavaScript- und TypeScript-Stacks im Frontend und
-                    Backend.
-                  </p>
-                  <p>
-                    Ich strebe eine langfristige Tätigkeit in der Web- und
-                    Softwareentwicklung an, in der ich anspruchsvolle technische
-                    Herausforderungen mit analytischem Denken, Kreativität und
-                    hoher Lösungsorientierung verbinde.
-                  </p>
-                </div>
+            </div>
+          </div>
+        </Card>
+        <Card variant="elevated">
+          <div class="profile gap-16">
+            <div class="gap-8">
+              <h2 class="headline">Profil</h2>
+              <div class="gap-16">
+                <p>
+                  Als Student der Medieninformatik mit abgeschlossener
+                  Ausbildung zum Fachinformatiker für Anwendungsentwicklung
+                  verbinde ich fundiertes theoretisches Wissen mit mehr als
+                  sechs Jahren praktischer Erfahrung in der Web- und
+                  Softwareentwicklung. Durch meine parallele Tätigkeit als
+                  Werkstudent in der Backend- und Frontend-Entwicklung arbeite
+                  ich kontinuierlich an realen, produktiven Systemen und
+                  übernehme Verantwortung für performante und nachhaltige
+                  Lösungen.
+                </p>
+                <p>
+                  Mein technisches Fundament reicht von skalierbarer
+                  PHP-Entwicklung mit Symfony-basierten Systemen bis hin zu
+                  modernen JavaScript- und TypeScript-Stacks im Frontend und
+                  Backend.
+                </p>
+                <p>
+                  Ich strebe eine langfristige Tätigkeit in der Web- und
+                  Softwareentwicklung an, in der ich anspruchsvolle technische
+                  Herausforderungen mit analytischem Denken, Kreativität und
+                  hoher Lösungsorientierung verbinde.
+                </p>
               </div>
-              <div class="buttons gap-8">
-                {/*
-                  // @ts-expect-error
-                  <Button
-                    client:load
-                    variant="text"
-                    href="tel:+4912341234567"
-                    target="_blank"
-                  >
-                    <Icon slot="icon" name="call" /> +49 1234 1234567
-                  </Button>
-                */}
-                {/*
-                  // @ts-expect-error
-                  <Button
-                    client:load
-                    variant="text"
-                    href="mailto:example@example.com"
-                    target="_blank"
-                  >
-                    <Icon slot="icon" name="mail" /> example@example.com
-                  </Button>
-                */}
-                <GithubButton path="IAmMajo" />
-              </div>
-            </Card>
-          )
-        }
+            </div>
+            <div class="buttons gap-8">
+              {
+                /*
+                <Button
+                  client:load
+                  variant="text"
+                  href="tel:+4912341234567"
+                  target="_blank"
+                >
+                  <Icon name="call" /> +49 1234 1234567
+                </Button>
+                */
+              }
+              {
+                /*
+                <Button
+                  client:load
+                  variant="text"
+                  href="mailto:example@example.com"
+                  target="_blank"
+                >
+                  <Icon name="mail" /> example@example.com
+                </Button>
+                */
+              }
+              <GithubButton path="IAmMajo" />
+            </div>
+          </div>
+        </Card>
       </div>
-      {
-        (
-          // @ts-expect-error
-          <Card class="projects body-large" variant="filled">
+      <div class="highlight">
+        <Card variant="filled">
+          <div class="projects body-large">
             <p>Sie interessieren sich für meine Projekte?</p>
-            {
-              // @ts-expect-error
-              <Button
-                client:load
-                variant="tonal"
-                href="https://maxoverlack.dev/projekte"
-                target="_blank"
-              >
-                <Icon slot="icon" name="attractions" />
-                maxoverlack.dev/projekte
-              </Button>
-            }
-          </Card>
-        )
-      }
+            <!-- @ts-expect-error Expression produces a union type that is too complex to represent -->
+            <Button
+              client:load
+              variant="tonal"
+              href="https://maxoverlack.dev/projekte"
+              target="_blank"
+            >
+              <Icon name="attractions" />
+              maxoverlack.dev/projekte
+            </Button>
+          </div>
+        </Card>
+      </div>
     </div>
     <Timeline headline="Berufserfahrung">
       <TimelineItem
@@ -246,9 +240,9 @@ import GithubButton from "../components/GithubButton.astro";
         </ul>
       </TimelineItem>
     </Timeline>
-    <CvTabs class="screen" />
+    <CvTabs client:only="svelte" class="screen" />
     <CvTabs class="print" />
-    <CvTabs class="print" value="additional-qualifications" />
+    <CvTabs class="print" tab="additional-qualifications" />
   </main>
 </Layout>
 <style>
@@ -286,9 +280,6 @@ import GithubButton from "../components/GithubButton.astro";
   .introduction {
     margin: 0 16px;
   }
-  mdui-card {
-    padding: 16px;
-  }
   .fact-sheet {
     flex-flow: row wrap;
     align-items: center;
@@ -299,11 +290,11 @@ import GithubButton from "../components/GithubButton.astro";
     flex: 1;
   }
   img {
-    border-radius: var(--mdui-shape-corner-medium);
+    border-radius: var(--m3-shape-medium);
   }
   .facts {
     flex: 1;
-    min-width: 211px;
+    min-width: 205px;
   }
   .fact {
     display: flex;
@@ -314,11 +305,13 @@ import GithubButton from "../components/GithubButton.astro";
     justify-content: center;
     flex-flow: row wrap;
   }
-  mdui-button {
+  .buttons :global(.m3-container) {
     width: 223px;
   }
-  .projects {
+  .highlight {
     margin: 0 16px;
+  }
+  .projects {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -329,7 +322,7 @@ import GithubButton from "../components/GithubButton.astro";
   ul {
     padding-left: 16px;
   }
-  @media (min-width: 538px) {
+  @media (min-width: 532px) {
     .introduction {
       flex-direction: row;
     }
@@ -340,7 +333,7 @@ import GithubButton from "../components/GithubButton.astro";
       flex: unset;
     }
     .profile {
-      flex: 1;
+      height: 100%;
       justify-content: space-between;
     }
   }
@@ -351,7 +344,7 @@ import GithubButton from "../components/GithubButton.astro";
     .introduction {
       margin: unset;
     }
-    .projects {
+    .highlight {
       margin: unset;
     }
   }

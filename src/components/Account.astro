@@ -1,7 +1,7 @@
 ---
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
-import { Card } from "mdui/components/card";
+import { Card } from "m3-svelte";
 
 interface Props {
   title: string;
@@ -23,16 +23,18 @@ const {
 
 const Heading = inSubcategory ? "h4" : "h3";
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "../images/logos/**/*"
+  "../images/logos/**/*",
 );
 const logoTitleNoSpaces = logoTitle.replaceAll(" ", "-");
 const imageName = logoTitleNoSpaces.toLowerCase().replaceAll(".", "");
 const imagePath = `../images/logos/${imageName}`;
 const darkImagePath = `../images/logos/dark/${imageName}`;
+let format = "svg";
 let image = images[`${imagePath}.svg`];
 let darkImage = images[`${darkImagePath}.svg`];
 const densities = [];
 if (!image) {
+  format = "png";
   image = images[`${imagePath}.png`];
   darkImage = images[`${darkImagePath}.png`];
   if (!image) {
@@ -49,46 +51,48 @@ if (!image) {
 const alt = `${logoTitleNoSpaces}-Logo`;
 ---
 
-{
-  (
-    // @ts-expect-error
-    <Card client:load href={href} target="_blank">
-      <section>
-        <div class="img-wrapper">
-          <Image
-            class:list={[{ invert: invert, light: darkImage }]}
-            src={image()}
-            width={92}
-            height={92}
-            densities={densities}
-            format="avif"
-            alt={alt}
-          />
-          {darkImage && (
+<a {href} target="_blank" class="account">
+  <!-- @ts-expect-error Expression produces a union type that is too complex to represent -->
+  <Card client:load variant="elevated" onclick>
+    <section>
+      <div class="img-wrapper">
+        <Image
+          class:list={[{ invert: invert, light: darkImage }]}
+          src={image()}
+          width={92}
+          height={92}
+          fit="contain"
+          {densities}
+          {format}
+          {alt}
+        />
+        {
+          darkImage && (
             <Image
               class="dark"
               src={darkImage()}
               width={92}
               height={92}
-              densities={densities}
-              format="avif"
-              alt={alt}
+              fit="contain"
+              {densities}
+              {format}
+              {alt}
             />
-          )}
-        </div>
-        <Heading class="title">{title}</Heading>
-        <div class="username">{username}</div>
-      </section>
-    </Card>
-  )
-}
+          )
+        }
+      </div>
+      <Heading class="title">{title}</Heading>
+      <div class="username">{username}</div>
+    </section>
+  </Card>
+</a>
 <style>
-  mdui-card {
+  .account {
     margin: 4px;
-    width: 100%;
+    text-decoration: none;
   }
-  section {
-    padding: 16px;
+  .account :global(.m3-container) {
+    width: 100%;
   }
   .title {
     margin: 0;
@@ -107,26 +111,26 @@ const alt = `${logoTitleNoSpaces}-Logo`;
     object-fit: contain;
   }
   .username {
-    color: rgb(var(--mdui-color-on-surface-variant));
+    color: var(--m3c-on-surface-variant);
   }
 
-  @media (min-width: 321px) {
-    mdui-card {
+  @media (min-width: 320px) {
+    .account {
       width: calc(50% - 8px);
     }
   }
-  @media (min-width: 469px) {
-    mdui-card {
+  @media (min-width: 468px) {
+    .account {
       width: calc(100% / 3 - 8px);
     }
   }
-  @media (min-width: 617px) {
-    mdui-card {
+  @media (min-width: 616px) {
+    .account {
       width: calc(25% - 8px);
     }
   }
-  @media (min-width: 765px) {
-    mdui-card {
+  @media (min-width: 764px) {
+    .account {
       width: calc(20% - 8px);
     }
   }

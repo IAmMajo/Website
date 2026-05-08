@@ -1,5 +1,5 @@
 ---
-import { Button } from "mdui/components/button";
+import { Button } from "m3-svelte";
 import githubLogo from "../images/logos/github.svg?raw";
 
 interface Props {
@@ -10,25 +10,23 @@ interface Props {
 const { path, urlPath = path } = Astro.props;
 ---
 
-{
-  // @ts-expect-error
-  <Button
-    client:load
-    variant="text"
-    class="github"
-    href={`https://github.com/${urlPath}`}
-    target="_blank"
-  >
-    <Fragment slot="icon" set:html={githubLogo} />
-    github.com/{path}
-  </Button>
-}
+<!-- @ts-expect-error Expression produces a union type that is too complex to represent -->
+<Button
+  client:load
+  variant="text"
+  href={`https://github.com/${urlPath}`}
+  target="_blank"
+>
+  <span set:html={githubLogo} />
+  github.com/{path}
+</Button>
 <style>
-  mdui-button :global(svg) {
+  span,
+  span :global(svg) {
     width: 24px;
     height: 24px;
   }
-  mdui-button :global(path) {
+  span :global(path) {
     fill: currentColor;
   }
 </style>

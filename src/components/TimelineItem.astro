@@ -1,5 +1,5 @@
 ---
-import { Card } from "mdui/components/card";
+import { Card } from "m3-svelte";
 
 interface Props {
   title: string;
@@ -18,34 +18,33 @@ const format = new Intl.DateTimeFormat("de-DE", {
 
 <li>
   <article>
-    {
-      (
-        // @ts-expect-error
-        <Card class="gap-8">
-          <header>
-            <div>
-              <h1 class="title">{title}</h1>
-              {entity && <div class="supporting">{entity}</div>}
-            </div>
-            <div class="dates supporting">
-              {!endDate && "seit"}
-              <time datetime={startDate}>
-                {format.format(new Date(startDate))}
-              </time>
-              {endDate && (
+    <Card variant="elevated">
+      <div class="gap-8">
+        <header>
+          <div>
+            <h1 class="title">{title}</h1>
+            {entity && <div class="supporting">{entity}</div>}
+          </div>
+          <div class="dates supporting">
+            {!endDate && "seit"}
+            <time datetime={startDate}>
+              {format.format(new Date(startDate))}
+            </time>
+            {
+              endDate && (
                 <span>
                   -
                   <time datetime={endDate}>
                     {format.format(new Date(endDate))}
                   </time>
                 </span>
-              )}
-            </div>
-          </header>
-          <slot />
-        </Card>
-      )
-    }
+              )
+            }
+          </div>
+        </header>
+        <slot />
+      </div>
+    </Card>
   </article>
   <div class="arrow"></div>
 </li>
@@ -71,7 +70,7 @@ const format = new Intl.DateTimeFormat("de-DE", {
     left: 0;
     width: 32px;
     text-align: center;
-    color: rgb(var(--mdui-color-secondary));
+    color: var(--m3c-secondary);
     z-index: 1;
   }
   li::after {
@@ -79,23 +78,20 @@ const format = new Intl.DateTimeFormat("de-DE", {
     position: absolute;
     width: 10px;
     height: 68px;
-    background-color: rgb(var(--mdui-color-surface-container-low));
+    background-color: var(--m3c-surface-container-low);
     left: 32px;
   }
   .arrow {
     position: absolute;
     border-top: 34px solid transparent;
     border-bottom: 34px solid transparent;
-    border-right: 17px solid rgb(var(--mdui-color-surface-container-low));
+    border-right: 17px solid var(--m3c-surface-container-low);
     left: 16px;
-    filter: drop-shadow(0 0.5px 0.1875px rgba(var(--mdui-color-shadow), 19%))
-      drop-shadow(0 0 0.125px rgba(var(--mdui-color-shadow), 3.9%));
+    filter: drop-shadow(0 1px 2px rgb(from var(--m3c-shadow) r g b / 0.3))
+      drop-shadow(0 1px 3px rgb(from var(--m3c-shadow) r g b / 0.15));
   }
   article {
     flex: 1;
-  }
-  mdui-card {
-    padding: 16px;
   }
   header {
     display: flex;
@@ -107,6 +103,6 @@ const format = new Intl.DateTimeFormat("de-DE", {
     text-align: right;
   }
   .supporting {
-    color: rgb(var(--mdui-color-on-surface-variant));
+    color: var(--m3c-on-surface-variant);
   }
 </style>

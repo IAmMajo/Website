@@ -1,8 +1,12 @@
 import { defineConfig } from "astro/config";
+import { functionsMixins } from "vite-plugin-functions-mixins";
 
-import lit from "@astrojs/lit";
+import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [lit()],
+  integrations: [svelte()],
+  vite: {
+    plugins: [functionsMixins({ deps: ["m3-svelte"] })],
+  },
 });
