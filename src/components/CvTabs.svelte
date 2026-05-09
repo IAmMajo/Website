@@ -79,6 +79,7 @@
 <style>
   .cv-tabs {
     break-inside: avoid;
+    overflow: hidden;
   }
   .variable-tabs {
     display: none;
