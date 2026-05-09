@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { render, type CollectionEntry } from "astro:content";
 import { Card } from "m3-svelte";
+import Button from "./Button.astro";
 import GithubButton from "./GithubButton.astro";
 
 interface Props {
@@ -33,7 +34,17 @@ const { Content } = await render(project);
           <GithubButton
             path={project.data.githubRepository}
             urlPath={project.data.githubUrlPath}
+            text="Quellcode"
           />
+          {
+            project.data.additionalButtons?.map((button) => (
+              <Button
+                variant="text"
+                {...button}
+                target="_blank"
+              />
+            ))
+          }
         </div>
       </div>
     </div>

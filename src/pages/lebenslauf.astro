@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import { Button, Card } from "m3-svelte";
+import { Card } from "m3-svelte";
 import CvTabs from "../components/CvTabs.svelte";
+import Button from "../components/Button.astro";
 import GithubButton from "../components/GithubButton.astro";
 import Icon from "../components/Icon.astro";
 import Timeline from "../components/Timeline.astro";
@@ -79,25 +80,22 @@ import Layout from "../layouts/Layout.astro";
               {
                 /*
                 <Button
-                  client:load
                   variant="text"
                   href="tel:+4912341234567"
+                  icon="call"
+                  text="+49 1234 1234567"
                   target="_blank"
-                >
-                  <Icon name="call" /> +49 1234 1234567
-                </Button>
+                />
                 */
               }
               {
                 /*
                 <Button
-                  client:load
                   variant="text"
                   href="mailto:example@example.com"
+                  icon="mail"
                   target="_blank"
-                >
-                  <Icon name="mail" /> example@example.com
-                </Button>
+                />
                 */
               }
               <GithubButton path="IAmMajo" />
@@ -110,14 +108,12 @@ import Layout from "../layouts/Layout.astro";
           <div class="projects body-large">
             <p>Sie interessieren sich für meine Projekte?</p>
             <Button
-              client:load
               variant="tonal"
               href="https://maxoverlack.dev/projekte"
+              icon="attractions"
+              text="Meine Projekte"
               target="_blank"
-            >
-              <Icon name="attractions" />
-              maxoverlack.dev/projekte
-            </Button>
+            />
           </div>
         </Card>
       </div>

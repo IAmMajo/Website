@@ -1,0 +1,35 @@
+---
+import { Button as MaterialButton } from "m3-svelte";
+import Icon from "./Icon.astro";
+
+interface Props {
+  variant: "text" | "tonal" | "outlined" | "contained";
+  href: string;
+  icon?: string;
+  text?: string;
+  printText?: string;
+  target?: string;
+}
+
+const { href, icon, text, printText, ...props } = Astro.props;
+
+const url = new URL(href, Astro.url);
+const displayedPrintText = printText ?? url.hostname + url.pathname;
+---
+
+<>
+  <!-- @ts-expect-error Expression produces a union type that is too complex to represent -->
+  <MaterialButton {href} {...props}>
+    {icon && <Icon name={icon} />}
+    {
+      text ? (
+        <>
+          <span class="screen">{text}</span>
+          <span class="print">{displayedPrintText}</span>
+        </>
+      ) : (
+        displayedPrintText
+      )
+    }
+  </MaterialButton>
+</>

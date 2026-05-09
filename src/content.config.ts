@@ -12,6 +12,11 @@ export const collections = {
         updatedAt: z.date(),
         githubRepository: z.string(),
         githubUrlPath: z.string().optional(),
+        additionalButtons: z.array(z.object({
+          href: z.string(),
+          icon: z.string(),
+          text: z.string(),
+        })).optional(),
       }),
   }),
 };

@@ -5,9 +5,12 @@ import githubLogo from "../images/logos/github.svg?raw";
 interface Props {
   path: string;
   urlPath?: string;
+  text?: string;
 }
 
-const { path, urlPath = path } = Astro.props;
+const { path, urlPath = path, text } = Astro.props;
+
+const printText = `github.com/${path}`;
 ---
 
 <>
@@ -18,17 +21,26 @@ const { path, urlPath = path } = Astro.props;
     href={`https://github.com/${urlPath}`}
     target="_blank"
   >
-    <span set:html={githubLogo} />
-    github.com/{path}
+    <span class="github-logo" set:html={githubLogo} />
+    {
+      text ? (
+        <>
+          <span class="screen">{text}</span>
+          <span class="print">{printText}</span>
+        </>
+      ) : (
+        printText
+      )
+    }
   </Button>
 </>
 <style>
-  span,
-  span :global(svg) {
+  .github-logo,
+  .github-logo :global(svg) {
     width: 24px;
     height: 24px;
   }
-  span :global(path) {
+  .github-logo :global(path) {
     fill: currentColor;
   }
 </style>

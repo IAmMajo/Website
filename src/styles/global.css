@@ -55,8 +55,7 @@ a {
   display: none;
 }
 .print {
-  visibility: hidden;
-  position: absolute;
+  display: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -79,7 +78,6 @@ a {
     display: none;
   }
   .print {
-    visibility: unset;
-    position: unset;
+    display: unset;
   }
 }
