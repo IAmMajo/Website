@@ -18,6 +18,9 @@
 :root {
   --m3-font: "Roboto Flex", sans-serif;
 }
+html {
+  font-size: 16px;
+}
 body,
 p {
   margin: 0;
