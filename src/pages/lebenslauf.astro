@@ -12,7 +12,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Mein Lebenslauf">
-  <main class="gap-16">
+  <div class="cv gap-16">
     <div class="gap-8">
       <div class="introduction gap-8">
         <Card variant="elevated">
@@ -239,7 +239,7 @@ import Layout from "../layouts/Layout.astro";
     <CvTabs client:only="svelte" class="screen" />
     <CvTabs class="print" />
     <CvTabs class="print" tab="additional-qualifications" />
-  </main>
+  </div>
 </Layout>
 <style>
   h1,
@@ -268,7 +268,7 @@ import Layout from "../layouts/Layout.astro";
     flex-direction: column;
     gap: 16px;
   }
-  main {
+  .cv {
     padding: 16px 0;
     max-width: 840px;
     margin: auto;
@@ -334,7 +334,7 @@ import Layout from "../layouts/Layout.astro";
     }
   }
   @media (min-width: 600px) {
-    main {
+    .cv {
       padding: 24px;
     }
     .introduction {

@@ -1,4 +1,8 @@
 ---
+import iconAttractions from "@ktibow/iconset-material-symbols/attractions-outline";
+import personIcon from "@ktibow/iconset-material-symbols/person-outline";
+import iconWork from "@ktibow/iconset-material-symbols/work-outline";
+import { NavCMLX, NavCMLXItem } from "m3-svelte";
 import "../styles/global.css";
 
 interface Props {
@@ -23,6 +27,66 @@ const { title } = Astro.props;
     <meta name="color-scheme" content="light dark" />
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+    </main>
+    <div class="navigation screen">
+      <NavCMLX client:load variant="auto">
+        <!-- @ts-expect-error Expression produces a union type that is too complex to represent -->
+        <NavCMLXItem
+          variant="auto"
+          icon={personIcon}
+          text="Accounts"
+          href="/"
+          selected={Astro.url.pathname === "/"}
+        />
+        <NavCMLXItem
+          variant="auto"
+          icon={iconWork}
+          text="Lebenslauf"
+          href="/lebenslauf/"
+          selected={Astro.url.pathname.startsWith("/lebenslauf")}
+        />
+        <NavCMLXItem
+          variant="auto"
+          icon={iconAttractions}
+          text="Projekte"
+          href="/projekte/"
+          selected={Astro.url.pathname.startsWith("/projekte")}
+        />
+      </NavCMLX>
+    </div>
   </body>
 </html>
+<style>
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1;
+    overflow: auto;
+  }
+  @media (min-width: 52.5rem) {
+    body {
+      flex-direction: row-reverse;
+    }
+    .navigation {
+      align-self: center;
+    }
+  }
+  @media (min-width: 100rem) {
+    .navigation {
+      align-self: unset;
+    }
+  }
+  @media print {
+    main {
+      overflow: unset;
+    }
+  }
+</style>

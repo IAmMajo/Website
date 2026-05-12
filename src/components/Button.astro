@@ -19,7 +19,7 @@ const displayedPrintText = printText ?? url.hostname + url.pathname;
 
 <>
   <!-- @ts-expect-error Expression produces a union type that is too complex to represent -->
-  <MaterialButton {href} {...props}>
+  <MaterialButton client:load {href} {...props}>
     {icon && <Icon name={icon} />}
     {
       text ? (

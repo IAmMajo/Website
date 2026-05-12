@@ -3,10 +3,10 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Seite existiert nicht">
-  <main class="gap-16">
+  <div class="not-found gap-16">
     <h1 class="display">Seite existiert nicht</h1>
     <p>Diese Seite existiert nicht. Gehe zur <a href="/">Home-Seite</a>.</p>
-  </main>
+  </div>
 </Layout>
 <style>
   h1 {
@@ -17,13 +17,13 @@ import Layout from "../layouts/Layout.astro";
     flex-direction: column;
     gap: 16px;
   }
-  main {
+  .not-found {
     padding: 16px;
     max-width: 760px;
     margin: auto;
   }
   @media (min-width: 600px) {
-    main {
+    .not-found {
       padding: 24px;
     }
   }
