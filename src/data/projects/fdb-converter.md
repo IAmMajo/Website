@@ -3,6 +3,10 @@ image: ../../images/projects/fdb-converter.png
 title: FDB Converter
 updatedAt: 2025-02-06
 githubRepository: IAmMajo/FDB-Converter
+additionalButtons:
+  - href: https://fdb.lu-dev.net/
+    icon: open_in_new
+    text: Besuchen
 ---
 
 Diese Website ist in meiner Freizeit ursprünglich während meiner Ausbildung

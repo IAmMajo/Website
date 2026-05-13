@@ -14,7 +14,11 @@ interface Props {
 const { href, icon, text, printText, ...props } = Astro.props;
 
 const url = new URL(href, Astro.url);
-const displayedPrintText = printText ?? url.hostname + url.pathname;
+
+let displayedPrintText = printText ?? url.hostname + url.pathname;
+if (displayedPrintText.endsWith("/")) {
+  displayedPrintText = displayedPrintText.slice(0, -1);
+}
 ---
 
 <>

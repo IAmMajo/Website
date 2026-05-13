@@ -3,6 +3,10 @@ image: ../../images/projects/distances-in-r3.png
 title: Abstände im R³
 updatedAt: 2023-07-03
 githubRepository: IAmMajo/Abstaende-Im-R3
+additionalButtons:
+  - href: https://abstaendeimr3.maxoverlack.dev/
+    icon: open_in_new
+    text: Besuchen
 ---
 
 Diese Website ist im Rahmen des Moduls „Lineare Algebra und Operations

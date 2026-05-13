@@ -4,6 +4,10 @@ title: Schmetterlinge
 updatedAt: 2023-05-23
 githubRepository: IAmMajo/FP-Uebungen
 githubUrlPath: IAmMajo/FP-Uebungen/tree/main/Testat
+additionalButtons:
+  - href: https://schmetterlinge.maxoverlack.dev/
+    icon: play
+    text: Spielen
 ---
 
 Dieses Browser-Spiel ist im Rahmen des Moduls „Fortgeschrittene Programmierung“

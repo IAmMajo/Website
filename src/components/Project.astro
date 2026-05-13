@@ -37,13 +37,15 @@ const { Content } = await render(project);
             text="Quellcode"
           />
           {
-            project.data.additionalButtons?.map((button) => (
-              <Button
-                variant="text"
-                {...button}
-                target="_blank"
-              />
-            ))
+            project.data.additionalButtons?.map((button) =>
+              button.printOnly ? (
+                <div class="print">
+                  <Button variant="text" {...button} target="_blank" />
+                </div>
+              ) : (
+                <Button variant="text" {...button} target="_blank" />
+              ),
+            )
           }
         </div>
       </div>
@@ -64,6 +66,9 @@ const { Content } = await render(project);
     flex-direction: column;
     gap: 16px;
   }
+  .project {
+    break-inside: avoid;
+  }
   .project > :global(.m3-container) {
     padding: 0;
     overflow: hidden;
@@ -80,5 +85,11 @@ const { Content } = await render(project);
   }
   .buttons {
     flex-flow: row wrap;
+  }
+  @media print {
+    .buttons {
+      flex-flow: column;
+      align-items: flex-start;
+    }
   }
 </style>
