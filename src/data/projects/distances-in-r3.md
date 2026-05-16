@@ -1,6 +1,8 @@
 ---
 image: ../../images/projects/distances-in-r3.png
 title: Abstände im R³
+startDate: 2023-06
+endDate: 2023-07
 updatedAt: 2023-07-03
 githubRepository: IAmMajo/Abstaende-Im-R3
 additionalButtons:

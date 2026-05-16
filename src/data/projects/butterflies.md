@@ -1,6 +1,8 @@
 ---
 image: ../../images/projects/butterflies.png
 title: Schmetterlinge
+startDate: 2023-05
+endDate: 2023-05
 updatedAt: 2023-05-23
 githubRepository: IAmMajo/FP-Uebungen
 githubUrlPath: IAmMajo/FP-Uebungen/tree/main/Testat

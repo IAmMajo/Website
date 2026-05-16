@@ -51,6 +51,9 @@ body {
 .body-large {
   @apply --m3-body-large;
 }
+.supporting {
+  color: var(--m3c-on-surface-variant);
+}
 a {
   color: var(--m3c-primary);
 }

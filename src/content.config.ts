@@ -9,6 +9,8 @@ export const collections = {
       z.object({
         image: image(),
         title: z.string(),
+        startDate: z.string(),
+        endDate: z.string().optional(),
         updatedAt: z.date(),
         githubRepository: z.string(),
         githubUrlPath: z.string().optional(),

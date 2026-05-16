@@ -1,5 +1,6 @@
 ---
 import { Card } from "m3-svelte";
+import TimePeriod from "./TimePeriod.astro";
 
 interface Props {
   title: string;
@@ -9,11 +10,6 @@ interface Props {
 }
 
 const { title, entity, startDate, endDate } = Astro.props;
-
-const format = new Intl.DateTimeFormat("de-DE", {
-  month: "short",
-  year: "numeric",
-});
 ---
 
 <li>
@@ -25,22 +21,7 @@ const format = new Intl.DateTimeFormat("de-DE", {
             <h1 class="title">{title}</h1>
             {entity && <div class="supporting">{entity}</div>}
           </div>
-          <div class="dates supporting">
-            {!endDate && "seit"}
-            <time datetime={startDate}>
-              {format.format(new Date(startDate))}
-            </time>
-            {
-              endDate && (
-                <span>
-                  -
-                  <time datetime={endDate}>
-                    {format.format(new Date(endDate))}
-                  </time>
-                </span>
-              )
-            }
-          </div>
+          <TimePeriod {startDate} {endDate} />
         </header>
         <slot />
       </div>
@@ -98,11 +79,5 @@ const format = new Intl.DateTimeFormat("de-DE", {
     flex-wrap: wrap-reverse;
     column-gap: 16px;
     justify-content: space-between;
-  }
-  .dates {
-    text-align: right;
-  }
-  .supporting {
-    color: var(--m3c-on-surface-variant);
   }
 </style>

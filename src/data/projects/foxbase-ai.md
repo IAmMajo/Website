@@ -1,6 +1,8 @@
 ---
 image: ../../images/projects/foxbase-ai.png
 title: FoxBase AI
+startDate: 2024-10
+endDate: 2025-02
 updatedAt: 2025-02-28
 githubRepository: IAmMajo/FoxBase-AI
 additionalButtons:

@@ -1,6 +1,8 @@
 ---
 image: ../../images/projects/pi.png
 title: Pi
+startDate: 2022-11
+endDate: 2023-01
 updatedAt: 2023-01-08
 githubRepository: IAmMajo/Pi
 additionalButtons:

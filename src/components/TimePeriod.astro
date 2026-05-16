@@ -1,0 +1,27 @@
+---
+interface Props {
+  startDate: string;
+  endDate?: string;
+}
+
+const { startDate, endDate } = Astro.props;
+
+const format = new Intl.DateTimeFormat("de-DE", {
+  month: "short",
+  year: "numeric",
+});
+---
+
+<div class="supporting">
+  {!endDate && "seit"}
+  <time datetime={startDate}>
+    {format.format(new Date(startDate))}
+  </time>
+  {
+    endDate && endDate !== startDate && (
+      <span>
+        - <time datetime={endDate}>{format.format(new Date(endDate))}</time>
+      </span>
+    )
+  }
+</div>

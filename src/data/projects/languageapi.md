@@ -1,6 +1,8 @@
 ---
 image: ../../images/projects/languageapi.png
 title: LanguageAPI
+startDate: 2018-11
+endDate: 2019-07
 updatedAt: 2019-07-20
 githubRepository: IAmMajo/LanguageAPI
 additionalButtons:

@@ -1,6 +1,7 @@
 ---
 image: ../../images/projects/fdb-converter.png
 title: FDB Converter
+startDate: 2022-01
 updatedAt: 2025-02-06
 githubRepository: IAmMajo/FDB-Converter
 additionalButtons:

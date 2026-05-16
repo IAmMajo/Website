@@ -1,7 +1,8 @@
 ---
 image: ../../images/projects/my-personal-website.jpeg
 title: Meine persönliche Website
-updatedAt: 2026-05-13
+startDate: 2021-07
+updatedAt: 2026-05-16
 githubRepository: IAmMajo/Website
 additionalButtons:
   - href: https://maxoverlack.dev/
@@ -9,6 +10,5 @@ additionalButtons:
     printOnly: true
 ---
 
-Dies ist meine persönliche Website. Als Framework wird
-[Astro](https://astro.build/) und als UI-Bibliothek
+Als Framework wird [Astro](https://astro.build/) und als UI-Bibliothek
 [m3-svelte](https://kendell.dev/m3-svelte/) verwendet.

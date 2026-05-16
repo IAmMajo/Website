@@ -1,6 +1,8 @@
 ---
 image: ../../images/projects/dmt-blog.png
 title: DMT-Blog
+startDate: 2024-04
+endDate: 2024-07
 updatedAt: 2024-07-15
 githubRepository: IAmMajo/DMT-Blog
 additionalButtons:

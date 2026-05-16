@@ -4,6 +4,7 @@ import { render, type CollectionEntry } from "astro:content";
 import { Card } from "m3-svelte";
 import Button from "./Button.astro";
 import GithubButton from "./GithubButton.astro";
+import TimePeriod from "./TimePeriod.astro";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -15,7 +16,6 @@ const { Content } = await render(project);
 ---
 
 <article class="project">
-  <!-- @ts-expect-error Expression produces a union type that is too complex to represent -->
   <Card variant="elevated">
     <Image
       src={project.data.image}
@@ -26,28 +26,44 @@ const { Content } = await render(project);
       format="avif"
       alt=""
     />
-    <div class="below-image gap-8">
-      <h1 class="title">{project.data.title}</h1>
-      <div class="content gap-16">
-        <Content />
-        <div class="buttons gap-8">
-          <GithubButton
-            path={project.data.githubRepository}
-            urlPath={project.data.githubUrlPath}
-            text="Quellcode"
-          />
-          {
-            project.data.additionalButtons?.map((button) =>
-              button.printOnly ? (
-                <div class="print">
-                  <Button variant="text" {...button} target="_blank" />
-                </div>
-              ) : (
-                <Button variant="text" {...button} target="_blank" />
-              ),
-            )
-          }
-        </div>
+    <div class="content gap-16">
+      <header>
+        <h1 class="title">{project.data.title}</h1>
+        <TimePeriod
+          startDate={project.data.startDate}
+          endDate={project.data.endDate}
+        />
+      </header>
+      <Content />
+      <div class="buttons gap-8">
+        <GithubButton
+          path={project.data.githubRepository}
+          urlPath={project.data.githubUrlPath}
+          text="Quellcode"
+        />
+        {
+          project.data.additionalButtons?.map((button) =>
+            button.printOnly ? (
+              <div class="print">
+                <Button
+                  variant="text"
+                  href={button.href}
+                  icon={button.icon}
+                  text={button.text}
+                  target="_blank"
+                />
+              </div>
+            ) : (
+              <Button
+                variant="text"
+                href={button.href}
+                icon={button.icon}
+                text={button.text}
+                target="_blank"
+              />
+            ),
+          )
+        }
       </div>
     </div>
   </Card>
@@ -80,8 +96,14 @@ const { Content } = await render(project);
     height: auto;
     aspect-ratio: 16 / 9;
   }
-  .below-image {
+  .content {
     padding: 16px;
+  }
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    justify-content: space-between;
   }
   .buttons {
     flex-flow: row wrap;
