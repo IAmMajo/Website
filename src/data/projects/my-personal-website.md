@@ -1,8 +1,8 @@
 ---
-image: ../../images/projects/my-personal-website.jpeg
+image: ../../images/projects/my-personal-website.jpg
 title: Meine persönliche Website
 startDate: 2021-07
-updatedAt: 2026-05-16
+updatedAt: 2026-05-17
 githubRepository: IAmMajo/Website
 additionalButtons:
   - href: https://maxoverlack.dev/

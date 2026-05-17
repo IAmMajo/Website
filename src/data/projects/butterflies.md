@@ -17,3 +17,5 @@ im zweiten Semester meines Studiums entstanden. Es handelt sich um einen
 modernen Nachbau des Schmetterlinge-Spiels vom Poly-Play-Arcade-Automaten der
 DDR. Als UI-Bibliothek wird
 [Material Web](https://github.com/material-components/material-web) verwendet.
+
+*Hinweis: Das Spiel ist nicht mit Smartphones/Tablets kompatibel.*
