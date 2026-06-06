@@ -13,72 +13,70 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Mein Lebenslauf">
   <div class="cv gap-16">
-    <div class="gap-8">
-      <div class="introduction gap-8">
-        <Card variant="elevated">
-          <div class="fact-sheet gap-16">
-            <div class="application-photo">
-              <Image
-                src={applicationPhoto}
-                width={205}
-                densities={[1, 2, 3, 4]}
-                format="avif"
-                quality="high"
-                priority
-                alt="Bewerbungsfoto"
-              />
-            </div>
-            <div class="facts gap-8">
-              <h1 class="display-small">Max Overlack</h1>
-              <div class="gap-5">
-                <div class="fact">
-                  <Icon name="home" />
-                  {/* Musterstr. 100, 12345 */} Duisburg
-                </div>
-                <div class="fact">
-                  <Icon name="event" />
-                  <time datetime="2001-02-27">27.02.2001</time>
-                </div>
-                <div class="fact">
-                  <Icon name="cake" /> Berlin
-                </div>
+    <div class="introduction gap-8">
+      <Card variant="elevated">
+        <div class="fact-sheet gap-16">
+          <div class="application-photo">
+            <Image
+              src={applicationPhoto}
+              width={205}
+              densities={[1, 2, 3, 4]}
+              format="avif"
+              quality="high"
+              priority
+              alt="Bewerbungsfoto"
+            />
+          </div>
+          <div class="facts gap-8">
+            <h1 class="display-small">Max Overlack</h1>
+            <div class="gap-5">
+              <div class="fact">
+                <Icon name="home" />
+                {/* Musterstr. 100, 12345 */} Duisburg
+              </div>
+              <div class="fact">
+                <Icon name="event" />
+                <time datetime="2001-02-27">27.02.2001</time>
+              </div>
+              <div class="fact">
+                <Icon name="cake" /> Berlin
               </div>
             </div>
           </div>
-        </Card>
-        <Card variant="elevated">
-          <div class="profile gap-16">
-            <div class="gap-8">
-              <h2 class="headline">Profil</h2>
-              <div class="gap-16">
-                <p>
-                  Als Student der Medieninformatik mit abgeschlossener
-                  Ausbildung zum Fachinformatiker für Anwendungsentwicklung
-                  verbinde ich fundiertes theoretisches Wissen mit mehr als
-                  sechs Jahren praktischer Erfahrung in der Web- und
-                  Softwareentwicklung. Durch meine parallele Tätigkeit als
-                  Werkstudent in der Backend- und Frontend-Entwicklung arbeite
-                  ich kontinuierlich an realen, produktiven Systemen und
-                  übernehme Verantwortung für performante und nachhaltige
-                  Lösungen.
-                </p>
-                <p>
-                  Mein technisches Fundament reicht von skalierbarer
-                  PHP-Entwicklung mit Symfony-basierten Systemen bis hin zu
-                  modernen JavaScript- und TypeScript-Stacks im Frontend und
-                  Backend.
-                </p>
-                <p>
-                  Ich strebe eine langfristige Tätigkeit in der Web- und
-                  Softwareentwicklung an, in der ich anspruchsvolle technische
-                  Herausforderungen mit analytischem Denken, Kreativität und
-                  hoher Lösungsorientierung verbinde.
-                </p>
-              </div>
+        </div>
+      </Card>
+      <Card variant="elevated">
+        <div class="profile gap-16">
+          <div class="gap-8">
+            <h2 class="headline">Profil</h2>
+            <div class="gap-16">
+              <p>
+                Mit meinem kürzlich abgeschlossenen Studium der
+                Medieninformatik, meiner durchgehenden Tätigkeit als Werkstudent
+                und meiner Ausbildung zum Fachinformatiker für
+                Anwendungsentwicklung verbinde ich fundiertes theoretisches
+                Wissen mit mehr als sechs Jahren praktischer Erfahrung in der
+                Web- und Softwareentwicklung. Aktuell bin ich weiterhin als
+                Werkstudent tätig, wodurch ich kontinuierlich an realen,
+                produktiven Systemen arbeite.
+              </p>
+              <p>
+                Mein technisches Fundament reicht von skalierbarer
+                PHP-Entwicklung mit Symfony-basierten Systemen bis hin zu
+                modernen JavaScript- und TypeScript-Stacks im Frontend und
+                Backend.
+              </p>
+              <p>
+                Ich strebe eine langfristige Tätigkeit in der Web- und
+                Softwareentwicklung an, in der ich anspruchsvolle technische
+                Herausforderungen mit analytischem Denken, Kreativität und hoher
+                Lösungsorientierung verbinde.
+              </p>
             </div>
-            <div class="buttons gap-8">
-              {
-                /*
+          </div>
+          <div class="buttons gap-8">
+            {
+              /*
                 <Button
                   variant="text"
                   href="tel:+4912341234567"
@@ -87,9 +85,9 @@ import Layout from "../layouts/Layout.astro";
                   target="_blank"
                 />
                 */
-              }
-              {
-                /*
+            }
+            {
+              /*
                 <Button
                   variant="text"
                   href="mailto:example@example.com"
@@ -97,25 +95,24 @@ import Layout from "../layouts/Layout.astro";
                   target="_blank"
                 />
                 */
-              }
-              <GithubButton path="IAmMajo" />
-            </div>
+            }
+            <GithubButton path="IAmMajo" />
           </div>
-        </Card>
-      </div>
-      <div class="highlight">
-        <Card variant="filled">
-          <div class="projects body-large">
-            <p>Sie interessieren sich für meine Projekte?</p>
-            <Button
-              variant="tonal"
-              href="https://maxoverlack.dev/projekte/"
-              icon="attractions"
-              text="Meine Projekte"
-            />
-          </div>
-        </Card>
-      </div>
+        </div>
+      </Card>
+    </div>
+    <div class="highlight">
+      <Card variant="filled">
+        <div class="projects body-large">
+          <p>Sie interessieren sich für meine Projekte?</p>
+          <Button
+            variant="tonal"
+            href="https://maxoverlack.dev/projekte/"
+            icon="attractions"
+            text="Meine Projekte"
+          />
+        </div>
+      </Card>
     </div>
     <Timeline headline="Berufserfahrung">
       <TimelineItem
@@ -129,6 +126,9 @@ import Layout from "../layouts/Layout.astro";
           <li>Auch TS-Entwicklung im Frontend mit Angular und Vue</li>
           <li>
             Beteiligung an der Entwicklung des FoxBase KI-Produkt-Experten
+          </li>
+          <li>
+            Arbeit mit den KI-Tools GitHub Copilot, Cursor, Codex und Kiro
           </li>
         </ul>
       </TimelineItem>
@@ -155,6 +155,7 @@ import Layout from "../layouts/Layout.astro";
           <li>
             Durchführung von CMS/DXP-Schulungen für mehrere Kundenunternehmen
           </li>
+          <li>Arbeit mit den KI-Tools GitHub Copilot und Cursor</li>
         </ul>
       </TimelineItem>
     </Timeline>
@@ -163,6 +164,7 @@ import Layout from "../layouts/Layout.astro";
         title="Medieninformatik B.Sc."
         entity="Hochschule Rhein-Waal"
         startDate="2022-09"
+        endDate="2026-05"
       >
         <ul class="gap-4">
           <li>Aktueller Schnitt: 1,8</li>
@@ -175,11 +177,7 @@ import Layout from "../layouts/Layout.astro";
             Verwendung von Angular, React, Vue/Nuxt, Astro, Swift Vapor, Unity,
             Flutter und Jetpack Compose
           </li>
-          <li>
-            Vorraussichtlicher Abschluss im <time datetime="2026-05">
-              Mai 2026
-            </time>
-          </li>
+          <li>Arbeit mit den KI-Tools GitHub Copilot, Cursor und Codex</li>
         </ul>
       </TimelineItem>
       <TimelineItem
