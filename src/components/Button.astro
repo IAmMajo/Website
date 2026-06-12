@@ -16,6 +16,9 @@ const { href, icon, text, printText, ...props } = Astro.props;
 const url = new URL(href, Astro.url);
 
 let displayedPrintText = printText ?? url.hostname + url.pathname;
+if (displayedPrintText.startsWith("www.")) {
+  displayedPrintText = displayedPrintText.slice(4);
+}
 if (displayedPrintText.endsWith("/")) {
   displayedPrintText = displayedPrintText.slice(0, -1);
 }
